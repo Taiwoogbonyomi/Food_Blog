@@ -1,0 +1,32 @@
+[
+    {
+        "model": "foodblog.recipe",
+        "pk": 1,
+        "fields": {
+            "title": "Spaghetti Bolognese",
+            "description": "A classic Italian pasta dish with a rich, meaty sauce.",
+            "ingredients": "spaghetti, ground beef, tomatoes, onions, garlic, olive oil, herbs",
+            "steps": "1. Cook spaghetti. 2. Brown beef with onions and garlic. 3. Add tomatoes and herbs. 4. Simmer sauce and serve over pasta.",
+            "prep_time": 15,
+            "cook_time": 45,
+            "servings": 4,
+            "category": 1,
+            "author": 1
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 2,
+        "fields": {
+            "title": "Chocolate Cake",
+            "description": "A rich and moist chocolate cake perfect for any occasion.",
+            "ingredients": "flour, cocoa powder, sugar, eggs, butter, milk, baking powder, vanilla extract",
+            "steps": "1. Mix dry ingredients. 2. Add wet ingredients and mix until smooth. 3. Bake at 350°F for 30-35 minutes.",
+            "prep_time": 20,
+            "cook_time": 35,
+            "servings": 8,
+            "category": 2,
+            "author": 1
+        }
+    }
+]

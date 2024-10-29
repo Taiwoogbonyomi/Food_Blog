@@ -10,6 +10,7 @@ class Category(models.Model):
         return self.name
 
 class Recipe(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
     ingredients = models.TextField(help_text="List ingredients, separated by commas")
