@@ -10,3 +10,7 @@ class RecipeListView(ListView):
     template_name = 'foodblog/recipe_list.html'
     context_object_name = 'recipes'
     paginate_by = 5
+
+class RecipeDetailView(DetailView):
+    model = Recipe
+    template_name = 'foodblog/recipe_detail.html'
