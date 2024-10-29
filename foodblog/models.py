@@ -12,4 +12,10 @@ class Category(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
+    ingredients = models.TextField(help_text="List ingredients, separated by commas")
+    steps = models.TextField(help_text="Describe each step for preparation")
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='recipes/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)    
 
