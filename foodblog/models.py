@@ -10,4 +10,4 @@ class Category(models.Model):
         return self.name
 
 class Recipe(models.Model):
-    
+    title = models.CharField(max_length=200)
