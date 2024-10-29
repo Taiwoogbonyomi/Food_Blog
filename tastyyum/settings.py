@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_2__bzr!sz)bp&=bp=fpkbf5n2=a1%5c1bo-lby84sexza$h9z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-taiwoogbonyomi-foodblog-mchfqro2fjo.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-taiwoogbonyomi-foodblog-mchfqro2fjo.ws.codeinstitute-ide.net', '.herokuapp.com']
 
 
 # Application definition
