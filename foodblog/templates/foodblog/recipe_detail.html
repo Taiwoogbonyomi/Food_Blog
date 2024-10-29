@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ recipe.title }}</h2>
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" style="width:100%; max-width:400px;">
+    <p><strong>Description:</strong> {{ recipe.description }}</p>
+    <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+    <p><strong>Steps:</strong> {{ recipe.steps }}</p>
+
+    <h3>Comments</h3>
+    <ul>
+        {% for comment in recipe.comments.all %}
+            <li><strong>{{ comment.author }}</strong>: {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_comment' recipe.pk %}">Add Comment</a>
+{% endblock %}
