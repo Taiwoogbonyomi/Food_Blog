@@ -14,3 +14,8 @@ class RecipeListView(ListView):
 class RecipeDetailView(DetailView):
     model = Recipe
     template_name = 'foodblog/recipe_detail.html'
+
+class CommentCreateView(CreateView):
+    model = Comment
+    fields = ['content']
+    template_name = 'foodblog/add_comment.html'
