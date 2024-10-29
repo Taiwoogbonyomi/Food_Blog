@@ -1,1 +1,1 @@
-web: gunicorn foodblog.wsgi
+web: gunicorn tastyyum.wsgi
