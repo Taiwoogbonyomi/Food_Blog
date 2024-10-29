@@ -19,3 +19,4 @@ class CommentCreateView(CreateView):
     model = Comment
     fields = ['content']
     template_name = 'foodblog/add_comment.html'
+
