@@ -1,23 +1,13 @@
-
 {% extends 'base.html' %}
-
 {% block content %}
-    <h2>Recipe List</h2>
-    <ul>
-        
-            <li>
-                <a href="">{{ recipe.title }}</a>
-                <p>{{ recipe.description|truncatewords:20 }}</p>
-            </li>
-        
-    </ul>
-    <div class="pagination">
-        {% if recipes.has_previous %}
-            <a href="?page={{ recipes.previous_page_number }}">Previous</a>
-        {% endif %}
-        <span>Page {{ recipes.number }} of {{ recipes.paginator.num_pages }}</span>
-        {% if recipes.has_next %}
-            <a href="?page={{ recipes.next_page_number }}">Next</a>
-        {% endif %}
-    </div>
+<h1>All Recipes</h1>
+<div class="recipe-list">
+    {% for recipe in recipes %}
+        <div class="recipe">
+            <img src="" alt="{{ recipe.title }}">
+            <h2><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></h2>
+            <p>{{ recipe.description|truncatewords:20 }}</p>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}

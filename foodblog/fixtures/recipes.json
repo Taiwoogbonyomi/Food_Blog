@@ -22,7 +22,74 @@
             "steps": "1. Marinate chicken with yogurt and spices. 2. Grill or cook the chicken until charred. 3. Sauté garlic and ginger, add tomato puree and cream. 4. Add cooked chicken to the sauce. 5. Simmer and serve with rice or naan.",
             "category": 1,
             "author": 1,
-            "image": "recipes/chicken_tikka_masala.jpg"
+            "image": ""
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 3,
+        "fields": {
+            "title": "Jollof Rice",
+            "description": "A popular West African rice dish cooked in a rich tomato sauce with vegetables and spices.",
+            "ingredients": "Rice, Tomatoes, Bell Peppers, Onion, Garlic, Vegetable Oil, Chicken or Beef Broth, Thyme, Bay Leaves, Salt, Black Pepper",
+            "steps": "1. Blend tomatoes, bell peppers, and onion to make a smooth puree. 2. Heat oil in a pot and fry the puree until it reduces and darkens. 3. Add broth, thyme, bay leaves, salt, and pepper. 4. Stir in rice and cook on low heat until tender. 5. Serve with grilled chicken or fried plantains.",
+            "category": 1,
+            "author": 1,
+            "image": ""
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 4,
+        "fields": {
+            "title": "Gumbo",
+            "description": "A hearty Louisiana stew made with meat or seafood, vegetables, and thickened with okra or a roux.",
+            "ingredients": "Shrimp, Chicken, Andouille Sausage, Okra, Bell Peppers, Celery, Onion, Garlic, Flour, Butter, Chicken Broth, Cajun Seasoning, Salt, Pepper, Rice",
+            "steps": "1. Make a roux by cooking flour and butter until dark brown. 2. Add bell peppers, celery, and onion and cook until soft. 3. Add garlic, okra, sausage, and chicken, stirring until mixed well. 4. Add broth and simmer until thickened. 5. Add shrimp and cook until just done. Serve over rice.",
+            "category": 1,
+            "author": 1,
+            "image": ""
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 5,
+        "fields": {
+            "title": "Fried Plantains",
+            "description": "A simple and delicious West African side dish made from ripe plantains, fried until golden brown.",
+            "ingredients": "Ripe Plantains, Vegetable Oil, Salt",
+            "steps": "1. Peel and slice plantains diagonally. 2. Heat oil in a pan over medium heat. 3. Fry plantains in batches until golden on both sides. 4. Remove and drain on paper towels. Sprinkle with salt to taste.",
+            "category": 1,
+            "author": 1,
+            "image": ""
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 6,
+        "fields": {
+            "title": "Mac and Cheese",
+            "description": "An American comfort food classic, this dish combines pasta with a rich, cheesy sauce.",
+            "ingredients": "Elbow Macaroni, Cheddar Cheese, Milk, Butter, Flour, Salt, Black Pepper",
+            "steps": "1. Cook macaroni according to package instructions. 2. Melt butter in a pot and whisk in flour to make a roux. 3. Slowly add milk, stirring until smooth. 4. Add cheese, salt, and pepper, stirring until melted. 5. Combine with macaroni and serve hot.",
+            "category": 1,
+            "author": 1,
+            "image": ""
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 7,
+        "fields": {
+            "title": "Egusi Soup",
+            "description": "A flavorful West African soup made with ground melon seeds, leafy greens, and meat or fish.",
+            "ingredients": "Egusi (melon seeds), Spinach or Bitter Leaf, Palm Oil, Onion, Tomatoes, Fish or Meat, Crayfish, Pepper, Salt",
+            "steps": "1. Grind egusi seeds into a powder. 2. Heat palm oil and sauté onions until golden. 3. Add ground tomatoes and cook until reduced. 4. Add egusi powder, stirring until it thickens. 5. Add meat or fish, then simmer with spinach or bitter leaf until tender.",
+            "category": 1,
+            "author": 1,
+            "image": ""
         }
     }
-]
+        
+    
+    ]

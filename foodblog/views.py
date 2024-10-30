@@ -8,7 +8,7 @@ class RecipeListView(ListView):
     model = Recipe
     template_name = 'foodblog/recipe_list.html'
     context_object_name = 'recipes'
-    paginate_by = 5
+    paginate_by = 6
 
 class RecipeDetailView(DetailView):
     model = Recipe
