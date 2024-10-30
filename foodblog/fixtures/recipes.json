@@ -3,30 +3,26 @@
         "model": "foodblog.recipe",
         "pk": 1,
         "fields": {
-            "title": "Spaghetti Bolognese",
-            "description": "A classic Italian pasta dish with a rich, meaty sauce.",
-            "ingredients": "spaghetti, ground beef, tomatoes, onions, garlic, olive oil, herbs",
-            "steps": "1. Cook spaghetti. 2. Brown beef with onions and garlic. 3. Add tomatoes and herbs. 4. Simmer sauce and serve over pasta.",
-            "prep_time": 15,
-            "cook_time": 45,
-            "servings": 4,
+            "title": "Spaghetti Carbonara",
+            "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
+            "ingredients": "Spaghetti, Eggs, Parmesan Cheese, Pancetta, Black Pepper",
+            "steps": "1. Cook the spaghetti according to package instructions. 2. In a bowl, whisk together eggs and cheese. 3. Cook pancetta until crispy. 4. Toss spaghetti with pancetta and egg mixture off heat to avoid scrambling. 5. Serve with more cheese and pepper.",
             "category": 1,
-            "author": 1
+            "author": 1,
+            "image": ""
         }
     },
     {
         "model": "foodblog.recipe",
         "pk": 2,
         "fields": {
-            "title": "Chocolate Cake",
-            "description": "A rich and moist chocolate cake perfect for any occasion.",
-            "ingredients": "flour, cocoa powder, sugar, eggs, butter, milk, baking powder, vanilla extract",
-            "steps": "1. Mix dry ingredients. 2. Add wet ingredients and mix until smooth. 3. Bake at 350°F for 30-35 minutes.",
-            "prep_time": 20,
-            "cook_time": 35,
-            "servings": 8,
-            "category": 2,
-            "author": 1
+            "title": "Chicken Tikka Masala",
+            "description": "A popular Indian dish made with marinated chicken chunks in a creamy tomato sauce.",
+            "ingredients": "Chicken, Yogurt, Garlic, Ginger, Tomato Puree, Cream, Spices",
+            "steps": "1. Marinate chicken with yogurt and spices. 2. Grill or cook the chicken until charred. 3. Sauté garlic and ginger, add tomato puree and cream. 4. Add cooked chicken to the sauce. 5. Simmer and serve with rice or naan.",
+            "country": "Indian",
+            "author": "admin",
+            "image": "images/chicken_tikka_masala.jpg"
         }
     }
 ]
