@@ -4,12 +4,12 @@
 {% block content %}
     <h2>Recipe List</h2>
     <ul>
-        {% for recipe in recipes %}
+        
             <li>
-                <a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
+                <a href="">{{ recipe.title }}</a>
                 <p>{{ recipe.description|truncatewords:20 }}</p>
             </li>
-        {% endfor %}
+        
     </ul>
     <div class="pagination">
         {% if recipes.has_previous %}

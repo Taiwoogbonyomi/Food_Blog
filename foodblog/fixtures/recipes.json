@@ -20,9 +20,9 @@
             "description": "A popular Indian dish made with marinated chicken chunks in a creamy tomato sauce.",
             "ingredients": "Chicken, Yogurt, Garlic, Ginger, Tomato Puree, Cream, Spices",
             "steps": "1. Marinate chicken with yogurt and spices. 2. Grill or cook the chicken until charred. 3. Sauté garlic and ginger, add tomato puree and cream. 4. Add cooked chicken to the sauce. 5. Simmer and serve with rice or naan.",
-            "country": "Indian",
-            "author": "admin",
-            "image": "images/chicken_tikka_masala.jpg"
+            "category": 1,
+            "author": 1,
+            "image": "recipes/chicken_tikka_masala.jpg"
         }
     }
 ]
