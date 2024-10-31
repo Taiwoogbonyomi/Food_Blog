@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.utils import timezone
+from django.db import IntegrityError
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -25,11 +26,15 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
-
+def save(self, *args, **kwargs):
+    if not self.slug:
+        original_slug = slugify(self.title)
+        self.slug = original_slug
+        counter = 1
+        while Recipe.objects.filter(slug=self.slug).exists():
+            self.slug = f"{original_slug}-{counter}"
+            counter += 1
+    super().save(*args, **kwargs)
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")

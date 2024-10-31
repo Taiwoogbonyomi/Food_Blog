@@ -3,93 +3,140 @@
         "model": "foodblog.recipe",
         "pk": 1,
         "fields": {
-            "title": "Spaghetti Carbonara",
-            "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
-            "ingredients": "Spaghetti, Eggs, Parmesan Cheese, Pancetta, Black Pepper",
-            "steps": "1. Cook the spaghetti according to package instructions. 2. In a bowl, whisk together eggs and cheese. 3. Cook pancetta until crispy. 4. Toss spaghetti with pancetta and egg mixture off heat to avoid scrambling. 5. Serve with more cheese and pepper.",
-            "category": 1,
-            "author": 1,
-            "image": ""
+            "title": "Classic Spaghetti Carbonara",
+            "slug": "classic-spaghetti-carbonara",
+            "content": "Cook pasta in a large pot of boiling salted water until al dente. In a pan, cook pancetta until crispy. In a bowl, whisk eggs and Parmesan. Combine hot pasta with pancetta, egg mixture, and some pasta water until creamy. Season with pepper and serve immediately.",
+            "ingredients": "Spaghetti\nEggs\nParmesan cheese\nPancetta\nBlack pepper",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 10,
+            "downvotes": 1
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 2,
+        "pk": 1,
         "fields": {
             "title": "Chicken Tikka Masala",
-            "description": "A popular Indian dish made with marinated chicken chunks in a creamy tomato sauce.",
-            "ingredients": "Chicken, Yogurt, Garlic, Ginger, Tomato Puree, Cream, Spices",
-            "steps": "1. Marinate chicken with yogurt and spices. 2. Grill or cook the chicken until charred. 3. Sauté garlic and ginger, add tomato puree and cream. 4. Add cooked chicken to the sauce. 5. Simmer and serve with rice or naan.",
-            "category": 1,
-            "author": 1,
-            "image": ""
+            "slug": "chicken-tikka-masala",
+            "content": "Marinate chicken in yogurt and spices, then grill until charred. In a pan, cook onions, garlic, and ginger. Add spices, tomatoes, and cream to make the sauce. Simmer grilled chicken in the sauce until cooked through. Serve with rice or naan.",
+            "ingredients": "Chicken\nYogurt\nGarlic\nGinger\nSpices\nTomatoes\nCream",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 25,
+            "downvotes": 3
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 3,
+        "pk": 1,
         "fields": {
-            "title": "Jollof Rice",
-            "description": "A popular West African rice dish cooked in a rich tomato sauce with vegetables and spices.",
-            "ingredients": "Rice, Tomatoes, Bell Peppers, Onion, Garlic, Vegetable Oil, Chicken or Beef Broth, Thyme, Bay Leaves, Salt, Black Pepper",
-            "steps": "1. Blend tomatoes, bell peppers, and onion to make a smooth puree. 2. Heat oil in a pot and fry the puree until it reduces and darkens. 3. Add broth, thyme, bay leaves, salt, and pepper. 4. Stir in rice and cook on low heat until tender. 5. Serve with grilled chicken or fried plantains.",
-            "category": 1,
-            "author": 1,
-            "image": ""
+            "title": "Avocado Toast",
+            "slug": "avocado-toast",
+            "content": "Mash ripe avocado and season with salt, pepper, and lemon juice. Spread onto toasted bread. Top with a fried egg or red pepper flakes as desired. Enjoy immediately.",
+            "ingredients": "Avocado\nBread\nSalt\nPepper\nLemon juice\nEgg (optional)",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 45,
+            "downvotes": 2
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 4,
+        "pk": 1,
         "fields": {
-            "title": "Gumbo",
-            "description": "A hearty Louisiana stew made with meat or seafood, vegetables, and thickened with okra or a roux.",
-            "ingredients": "Shrimp, Chicken, Andouille Sausage, Okra, Bell Peppers, Celery, Onion, Garlic, Flour, Butter, Chicken Broth, Cajun Seasoning, Salt, Pepper, Rice",
-            "steps": "1. Make a roux by cooking flour and butter until dark brown. 2. Add bell peppers, celery, and onion and cook until soft. 3. Add garlic, okra, sausage, and chicken, stirring until mixed well. 4. Add broth and simmer until thickened. 5. Add shrimp and cook until just done. Serve over rice.",
-            "category": 1,
-            "author": 1,
-            "image": ""
+            "title": "Beef Tacos",
+            "slug": "beef-tacos",
+            "content": "Cook ground beef with onions and taco seasoning. Warm taco shells and fill with beef mixture. Top with lettuce, cheese, and salsa. Serve with a lime wedge.",
+            "ingredients": "Ground beef\nTaco seasoning\nTaco shells\nLettuce\nCheese\nSalsa\nLime",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 33,
+            "downvotes": 4
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 5,
+        "pk": 1,
         "fields": {
-            "title": "Fried Plantains",
-            "description": "A simple and delicious West African side dish made from ripe plantains, fried until golden brown.",
-            "ingredients": "Ripe Plantains, Vegetable Oil, Salt",
-            "steps": "1. Peel and slice plantains diagonally. 2. Heat oil in a pan over medium heat. 3. Fry plantains in batches until golden on both sides. 4. Remove and drain on paper towels. Sprinkle with salt to taste.",
-            "category": 1,
-            "author": 1,
-            "image": ""
+            "title": "Vegetable Stir Fry",
+            "slug": "vegetable-stir-fry",
+            "content": "Heat oil in a wok, add garlic, ginger, and vegetables. Stir fry for a few minutes. Add soy sauce and sesame oil. Serve over rice or noodles.",
+            "ingredients": "Broccoli\nCarrots\nBell peppers\nGarlic\nGinger\nSoy sauce\nSesame oil",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 40,
+            "downvotes": 2
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 6,
+        "pk": 1,
         "fields": {
-            "title": "Mac and Cheese",
-            "description": "An American comfort food classic, this dish combines pasta with a rich, cheesy sauce.",
-            "ingredients": "Elbow Macaroni, Cheddar Cheese, Milk, Butter, Flour, Salt, Black Pepper",
-            "steps": "1. Cook macaroni according to package instructions. 2. Melt butter in a pot and whisk in flour to make a roux. 3. Slowly add milk, stirring until smooth. 4. Add cheese, salt, and pepper, stirring until melted. 5. Combine with macaroni and serve hot.",
-            "category": 1,
-            "author": 1,
-            "image": ""
+            "title": "Chocolate Chip Cookies",
+            "slug": "chocolate-chip-cookies",
+            "content": "Preheat oven to 350°F (175°C). Cream together butter and sugars. Add eggs and vanilla. Mix in flour, baking soda, and salt. Fold in chocolate chips. Drop spoonfuls onto baking sheet and bake for 10-12 minutes.",
+            "ingredients": "Butter\nSugar\nBrown sugar\nEggs\nVanilla extract\nFlour\nBaking soda\nSalt\nChocolate chips",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 65,
+            "downvotes": 5
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 7,
+        "pk": 1,
         "fields": {
-            "title": "Egusi Soup",
-            "description": "A flavorful West African soup made with ground melon seeds, leafy greens, and meat or fish.",
-            "ingredients": "Egusi (melon seeds), Spinach or Bitter Leaf, Palm Oil, Onion, Tomatoes, Fish or Meat, Crayfish, Pepper, Salt",
-            "steps": "1. Grind egusi seeds into a powder. 2. Heat palm oil and sauté onions until golden. 3. Add ground tomatoes and cook until reduced. 4. Add egusi powder, stirring until it thickens. 5. Add meat or fish, then simmer with spinach or bitter leaf until tender.",
-            "category": 1,
-            "author": 1,
-            "image": ""
+            "title": "Caesar Salad",
+            "slug": "caesar-salad",
+            "content": "Combine lettuce, croutons, and Caesar dressing in a large bowl. Toss to coat. Top with grated Parmesan cheese and serve.",
+            "ingredients": "Romaine lettuce\nCroutons\nCaesar dressing\nParmesan cheese",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 27,
+            "downvotes": 1
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 1,
+        "fields": {
+            "title": "Pancakes",
+            "slug": "pancakes",
+            "content": "Mix flour, baking powder, sugar, and salt. Add milk, eggs, and melted butter. Heat a skillet and pour batter to form pancakes. Cook until golden brown on each side.",
+            "ingredients": "Flour\nBaking powder\nSugar\nSalt\nMilk\nEggs\nButter",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 50,
+            "downvotes": 6
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 1,
+        "fields": {
+            "title": "Greek Salad",
+            "slug": "greek-salad",
+            "content": "Combine tomatoes, cucumber, onion, olives, and feta cheese in a bowl. Drizzle with olive oil and season with oregano. Serve chilled.",
+            "ingredients": "Tomatoes\nCucumber\nRed onion\nOlives\nFeta cheese\nOlive oil\nOregano",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 20,
+            "downvotes": 1
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 1,
+        "fields": {
+            "title": "Tomato Basil Soup",
+            "slug": "tomato-basil-soup",
+            "content": "Cook garlic in olive oil. Add tomatoes and simmer. Blend with fresh basil and season with salt and pepper. Serve hot.",
+            "ingredients": "Tomatoes\nGarlic\nOlive oil\nBasil\nSalt\nPepper",
+            "created_at": "2024-10-29T12:00:00Z",
+            "updated_at": "2024-10-29T12:00:00Z",
+            "upvotes": 30,
+            "downvotes": 2
         }
     }
-        
-    
-    ]
+]
