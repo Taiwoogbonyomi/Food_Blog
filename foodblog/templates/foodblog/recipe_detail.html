@@ -7,14 +7,14 @@
     <p><strong>Description:</strong> {{ recipe.description }}</p>
     <p><strong>Ingredients:</strong></p>
     <ul>
-        {% for ingredient in recipe.ingredients|splitlines %}
-            <li>{{ ingredient }}</li>  
+        {% for line in ingredients %}
+        <p>{{ line }}</p>
         {% endfor %}
     </ul>
     
     <p><strong>Steps:</strong></p>
     <ol>
-        {% for step in recipe.instructions|splitlines %}
+        {% for step in recipe.instructions %}
             <li>{{ step }}</li> 
         {% endfor %}
     </ol>

@@ -20,7 +20,7 @@ class Recipe(models.Model):
     upvotes = models.IntegerField(default=0)  
     downvotes = models.IntegerField(default=0)  
     created_at = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
 
     def __str__(self):
         return self.title
