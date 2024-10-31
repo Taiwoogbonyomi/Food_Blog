@@ -1,32 +1,81 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-    <h2>{{ recipe.title }}</h2>
-    <img src="" alt="{{ recipe.title }}" style="width:100%; max-width:400px; border-radius: 5px;"> <!-- Added border-radius for styling -->
-    
-    <p><strong>Description:</strong> {{ recipe.description }}</p>
-    <p><strong>Ingredients:</strong></p>
-    <ul>
-        {% for line in ingredients %}
-        <p>{{ line }}</p>
-        {% endfor %}
-    </ul>
-    
-    <p><strong>Steps:</strong></p>
-    <ol>
-        {% for step in recipe.instructions %}
-            <li>{{ step }}</li> 
-        {% endfor %}
-    </ol>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
 
-    <h3>Comments</h3>
-    <ul>
-        {% for comment in recipe.comments.all %}
-            <li><strong>{{ comment.author }}</strong>: {{ comment.content }}</li>
-        {% empty %}
-            <li>No comments yet.</li> 
-        {% endfor %}
-    </ul>
+            <!-- Recipe Title and Description -->
+            <h1>{{ recipe.title }}</h1>
+            <p class="text-muted">{{ recipe.created_at|date:"F j, Y" }} by {{ recipe.author }}</p>
+            <p>{{ recipe.description }}</p>
 
-    <a href="{% url 'add_comment' recipe.pk %}" class="btn btn-secondary mt-3">Add a Comment</a> 
+            <!-- Recipe Image 
+            {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="img-fluid mb-3">
+            {% endif %} -->
+
+            <!-- Ingredients -->
+            <h3>Ingredients</h3>
+            <ul>
+                {% for ingredient in recipe.ingredients.splitlines %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+
+            <!-- Steps -->
+            <h3>Steps</h3>
+            <ol>
+                {% for step in recipe.steps.splitlines %}
+                    <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+
+            <!-- Upvote / Downvote Section -->
+            <div class="d-flex align-items-center my-4">
+                <form action="{% url 'recipe_upvote' recipe.pk %}" method="POST" class="me-3">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-thumbs-up"></i> Upvote ({{ recipe.upvotes }})
+                    </button>
+                </form>
+                <form action="{% url 'recipe_downvote' recipe.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-thumbs-down"></i> Downvote ({{ recipe.downvotes }})
+                    </button>
+                </form>
+            </div>
+
+            <!-- Comments Section -->
+            <h3>Comments</h3>
+            {% if recipe.comments.all %}
+                <ul class="list-unstyled">
+                    {% for comment in recipe.comments.all %}
+                        <li class="media my-4">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">{{ comment.author }}</h5>
+                                <p>{{ comment.content }}</p>
+                                <small class="text-muted">{{ comment.created_at|date:"F j, Y, g:i a" }}</small>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No comments yet.</p>
+            {% endif %}
+
+            <!-- Add Comment Form -->
+            <h4>Add a Comment</h4>
+            <form action="{% url 'add_comment' recipe.pk %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <textarea name="content" class="form-control" rows="3" placeholder="Write your comment here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Comment</button>
+            </form>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

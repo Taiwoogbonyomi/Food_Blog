@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import get_object_or_404
 from .models import Recipe, Comment
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -41,3 +42,17 @@ def add_comment(request, pk):
     return render(request, 'foodblog/add_comment.html', {'form': form, 'recipe': recipe})
 
 
+
+@login_required
+def recipe_upvote(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+    recipe.upvotes += 1
+    recipe.save()
+    return redirect('recipe_detail', pk=pk)
+
+@login_required
+def recipe_downvote(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+    recipe.downvotes += 1
+    recipe.save()
+    return redirect('recipe_detail', pk=pk)

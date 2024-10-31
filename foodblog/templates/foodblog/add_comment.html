@@ -21,24 +21,3 @@
 {% endblock %}
 Update the recipe_detail.html Template to Link to the Comment Form
 Add a link to the add_comment form in your recipe_detail.html:
-
-html
-Copy code
-<!-- recipe_detail.html -->
-<h1>{{ recipe.title }}</h1>
-<p>{{ recipe.description }}</p>
-
-<!-- Link to add comment -->
-<a href="{% url 'add_comment' recipe.pk %}" class="btn btn-secondary mt-3">Add a Comment</a>
-
-<hr>
-<h3>Comments</h3>
-{% for comment in recipe.comments.all %}
-    <div>
-        <p><strong>{{ comment.name }}</strong></p>
-        <p>{{ comment.text }}</p>
-    </div>
-    <hr>
-{% empty %}
-    <p>No comments yet. Be the first to comment!</p>
-{% endfor %}
