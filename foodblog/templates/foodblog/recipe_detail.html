@@ -28,5 +28,5 @@
         {% endfor %}
     </ul>
 
-    <a href="{% url 'add_comment' recipe.slug %}">Add Comment</a> 
+    <a href="{% url 'add_comment' recipe.pk %}" class="btn btn-secondary mt-3">Add a Comment</a> 
 {% endblock %}

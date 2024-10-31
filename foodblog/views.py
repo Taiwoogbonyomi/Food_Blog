@@ -25,3 +25,19 @@ class CommentCreateView(CreateView):
     template_name = 'foodblog/add_comment.html'
 
 
+def add_comment(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.recipe = recipe
+            comment.save()
+            return redirect('recipe_detail', pk=recipe.pk)
+    else:
+        form = CommentForm()
+
+    return render(request, 'foodblog/add_comment.html', {'form': form, 'recipe': recipe})
+
+
