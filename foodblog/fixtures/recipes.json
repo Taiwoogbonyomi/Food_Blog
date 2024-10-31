@@ -4,139 +4,119 @@
         "pk": 1,
         "fields": {
             "title": "Classic Spaghetti Carbonara",
-            "slug": "classic-spaghetti-carbonara",
-            "content": "Cook pasta in a large pot of boiling salted water until al dente. In a pan, cook pancetta until crispy. In a bowl, whisk eggs and Parmesan. Combine hot pasta with pancetta, egg mixture, and some pasta water until creamy. Season with pepper and serve immediately.",
-            "ingredients": "Spaghetti\nEggs\nParmesan cheese\nPancetta\nBlack pepper",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 10,
-            "downvotes": 1
+            "description": "A creamy and delicious pasta dish from Italy.",
+            "ingredients": "Spaghetti, Eggs, Parmesan cheese, Pancetta, Black pepper",
+            "steps": "1. Boil pasta. 2. Cook pancetta until crispy. 3. Mix eggs with Parmesan. 4. Combine and serve.",
+            "category": 1,
+            "author": 1,
+            "upvotes": 15,
+            "downvotes": 2,
+            "created_at": "2024-10-29T12:00:00Z"
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 1,
+        "pk": 2,
         "fields": {
             "title": "Chicken Tikka Masala",
-            "slug": "chicken-tikka-masala",
-            "content": "Marinate chicken in yogurt and spices, then grill until charred. In a pan, cook onions, garlic, and ginger. Add spices, tomatoes, and cream to make the sauce. Simmer grilled chicken in the sauce until cooked through. Serve with rice or naan.",
-            "ingredients": "Chicken\nYogurt\nGarlic\nGinger\nSpices\nTomatoes\nCream",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
+            "description": "A popular Indian curry dish with grilled marinated chicken.",
+            "ingredients": "Chicken, Yogurt, Garlic, Ginger, Spices, Tomatoes, Cream",
+            "steps": "1. Marinate chicken. 2. Grill until charred. 3. Prepare sauce. 4. Simmer chicken in sauce and serve.",
+            "category": 2,
+            "author": 1,
             "upvotes": 25,
-            "downvotes": 3
+            "downvotes": 3,
+            "created_at": "2024-10-29T12:00:00Z"
         }
     },
     {
         "model": "foodblog.recipe",
-        "pk": 1,
+        "pk": 3,
         "fields": {
-            "title": "Avocado Toast",
-            "slug": "avocado-toast",
-            "content": "Mash ripe avocado and season with salt, pepper, and lemon juice. Spread onto toasted bread. Top with a fried egg or red pepper flakes as desired. Enjoy immediately.",
-            "ingredients": "Avocado\nBread\nSalt\nPepper\nLemon juice\nEgg (optional)",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 45,
-            "downvotes": 2
-        }
-    },
-    {
-        "model": "foodblog.recipe",
-        "pk": 1,
-        "fields": {
-            "title": "Beef Tacos",
-            "slug": "beef-tacos",
-            "content": "Cook ground beef with onions and taco seasoning. Warm taco shells and fill with beef mixture. Top with lettuce, cheese, and salsa. Serve with a lime wedge.",
-            "ingredients": "Ground beef\nTaco seasoning\nTaco shells\nLettuce\nCheese\nSalsa\nLime",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 33,
-            "downvotes": 4
-        }
-    },
-    {
-        "model": "foodblog.recipe",
-        "pk": 1,
-        "fields": {
-            "title": "Vegetable Stir Fry",
-            "slug": "vegetable-stir-fry",
-            "content": "Heat oil in a wok, add garlic, ginger, and vegetables. Stir fry for a few minutes. Add soy sauce and sesame oil. Serve over rice or noodles.",
-            "ingredients": "Broccoli\nCarrots\nBell peppers\nGarlic\nGinger\nSoy sauce\nSesame oil",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 40,
-            "downvotes": 2
-        }
-    },
-    {
-        "model": "foodblog.recipe",
-        "pk": 1,
-        "fields": {
-            "title": "Chocolate Chip Cookies",
-            "slug": "chocolate-chip-cookies",
-            "content": "Preheat oven to 350°F (175°C). Cream together butter and sugars. Add eggs and vanilla. Mix in flour, baking soda, and salt. Fold in chocolate chips. Drop spoonfuls onto baking sheet and bake for 10-12 minutes.",
-            "ingredients": "Butter\nSugar\nBrown sugar\nEggs\nVanilla extract\nFlour\nBaking soda\nSalt\nChocolate chips",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 65,
-            "downvotes": 5
-        }
-    },
-    {
-        "model": "foodblog.recipe",
-        "pk": 1,
-        "fields": {
-            "title": "Caesar Salad",
-            "slug": "caesar-salad",
-            "content": "Combine lettuce, croutons, and Caesar dressing in a large bowl. Toss to coat. Top with grated Parmesan cheese and serve.",
-            "ingredients": "Romaine lettuce\nCroutons\nCaesar dressing\nParmesan cheese",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 27,
-            "downvotes": 1
-        }
-    },
-    {
-        "model": "foodblog.recipe",
-        "pk": 1,
-        "fields": {
-            "title": "Pancakes",
-            "slug": "pancakes",
-            "content": "Mix flour, baking powder, sugar, and salt. Add milk, eggs, and melted butter. Heat a skillet and pour batter to form pancakes. Cook until golden brown on each side.",
-            "ingredients": "Flour\nBaking powder\nSugar\nSalt\nMilk\nEggs\nButter",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 50,
-            "downvotes": 6
-        }
-    },
-    {
-        "model": "foodblog.recipe",
-        "pk": 1,
-        "fields": {
-            "title": "Greek Salad",
-            "slug": "greek-salad",
-            "content": "Combine tomatoes, cucumber, onion, olives, and feta cheese in a bowl. Drizzle with olive oil and season with oregano. Serve chilled.",
-            "ingredients": "Tomatoes\nCucumber\nRed onion\nOlives\nFeta cheese\nOlive oil\nOregano",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
-            "upvotes": 20,
-            "downvotes": 1
-        }
-    },
-    {
-        "model": "foodblog.recipe",
-        "pk": 1,
-        "fields": {
-            "title": "Tomato Basil Soup",
-            "slug": "tomato-basil-soup",
-            "content": "Cook garlic in olive oil. Add tomatoes and simmer. Blend with fresh basil and season with salt and pepper. Serve hot.",
-            "ingredients": "Tomatoes\nGarlic\nOlive oil\nBasil\nSalt\nPepper",
-            "created_at": "2024-10-29T12:00:00Z",
-            "updated_at": "2024-10-29T12:00:00Z",
+            "title": "Beef Stroganoff",
+            "description": "A classic Russian dish with tender beef strips and a creamy mushroom sauce.",
+            "ingredients": "Beef, Mushrooms, Onion, Garlic, Sour cream, Beef broth",
+            "steps": "1. Sear beef strips. 2. Sauté mushrooms and onions. 3. Add beef broth and reduce. 4. Stir in sour cream and serve over noodles.",
+            "category": 3,
+            "author": 1,
             "upvotes": 30,
-            "downvotes": 2
+            "downvotes": 1,
+            "created_at": "2024-10-29T12:00:00Z"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 4,
+        "fields": {
+            "title": "Avocado Toast with Poached Egg",
+            "description": "A quick and nutritious breakfast option with creamy avocado and a perfectly poached egg.",
+            "ingredients": "Bread, Avocado, Egg, Salt, Pepper, Lemon juice",
+            "steps": "1. Toast bread. 2. Mash avocado with salt, pepper, and lemon juice. 3. Spread avocado on toast. 4. Top with a poached egg.",
+            "category": 4,
+            "author": 1,
+            "upvotes": 45,
+            "downvotes": 5,
+            "created_at": "2024-10-29T12:00:00Z"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 5,
+        "fields": {
+            "title": "French Onion Soup",
+            "description": "A comforting French soup with caramelized onions, beef broth, and melted cheese.",
+            "ingredients": "Onions, Butter, Beef broth, French bread, Gruyere cheese",
+            "steps": "1. Caramelize onions in butter. 2. Add beef broth and simmer. 3. Pour soup into bowls. 4. Top with bread and cheese, broil until melted.",
+            "category": 5,
+            "author": 1,
+            "upvotes": 60,
+            "downvotes": 7,
+            "created_at": "2024-10-29T12:00:00Z"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 6,
+        "fields": {
+            "title": "Sushi Rolls",
+            "description": "Homemade sushi rolls with fresh ingredients and customizable fillings.",
+            "ingredients": "Sushi rice, Nori sheets, Cucumber, Avocado, Salmon, Soy sauce",
+            "steps": "1. Prepare sushi rice. 2. Place rice on nori. 3. Add fillings and roll. 4. Slice and serve with soy sauce.",
+            "category": 6,
+            "author": 1,
+            "upvotes": 70,
+            "downvotes": 5,
+            "created_at": "2024-10-29T12:00:00Z"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 7,
+        "fields": {
+            "title": "Tacos al Pastor",
+            "description": "Traditional Mexican tacos with marinated pork and pineapple.",
+            "ingredients": "Pork, Pineapple, Onion, Cilantro, Corn tortillas, Lime",
+            "steps": "1. Marinate pork with spices. 2. Grill with pineapple. 3. Slice and serve on tortillas with toppings.",
+            "category": 2,
+            "author": 1,
+            "upvotes": 100,
+            "downvotes": 8,
+            "created_at": "2024-10-29T12:00:00Z"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 8,
+        "fields": {
+            "title": "Mushroom Risotto",
+            "description": "A creamy Italian rice dish made with mushrooms and Parmesan cheese.",
+            "ingredients": "Arborio rice, Mushrooms, Onion, Garlic, Parmesan, White wine",
+            "steps": "1. Sauté onions and mushrooms. 2. Add rice and wine. 3. Gradually add broth, stirring until creamy. 4. Stir in Parmesan and serve.",
+            "category": 3,
+            "author": 1,
+            "upvotes": 85,
+            "downvotes": 6,
+            "created_at": "2024-10-29T12:00:00Z"
         }
     }
 ]
