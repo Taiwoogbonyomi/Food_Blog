@@ -10,6 +10,16 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+from django.db import models
+from django.contrib.auth.models import User
+from django.utils.text import slugify
+from django.utils import timezone
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
@@ -19,8 +29,8 @@ class Recipe(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='recipes/', blank=True, null=True)
-    upvotes = models.IntegerField(default=0)  
-    downvotes = models.IntegerField(default=0)  
+    upvotes = models.IntegerField(default=0)
+    downvotes = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
 
