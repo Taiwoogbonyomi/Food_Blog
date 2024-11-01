@@ -15,19 +15,17 @@
                 <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="img-fluid mb-3">
             {% endif %} -->
 
-            <!-- Ingredients -->
             <h3>Ingredients</h3>
             <ul>
-                {% for ingredient in recipe.ingredients.splitlines %}
-                    <li>{{ ingredient }}</li>
+                {% for ingredient in recipe.ingredients.split %}
+                    <li>{{ ingredient.strip }}</li>
                 {% endfor %}
             </ul>
-
-            <!-- Steps -->
+    
             <h3>Steps</h3>
             <ol>
                 {% for step in recipe.steps.splitlines %}
-                    <li>{{ step }}</li>
+                    <li>{{ step.strip }}</li>
                 {% endfor %}
             </ol>
 

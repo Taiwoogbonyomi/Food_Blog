@@ -4,6 +4,7 @@ from django.utils.text import slugify
 from django.utils import timezone
 from django.db import IntegrityError
 
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
 

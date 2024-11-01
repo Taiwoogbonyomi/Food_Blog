@@ -111,7 +111,7 @@
             "title": "Mushroom Risotto",
             "description": "A creamy Italian rice dish made with mushrooms and Parmesan cheese.",
             "ingredients": "Arborio rice, Mushrooms, Onion, Garlic, Parmesan, White wine",
-            "steps": "1. Sauté onions and mushrooms. 2. Add rice and wine. 3. Gradually add broth, stirring until creamy. 4. Stir in Parmesan and serve.",
+            "steps": "1.Sauté onions and mushrooms. 2. Add rice and wine. 3. Gradually add broth, stirring until creamy. 4. Stir in Parmesan and serve.",
             "category": 3,
             "author": 1,
             "upvotes": 85,
