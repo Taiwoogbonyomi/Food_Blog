@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import Recipe, Comment
-from .forms import CommentForm  # Assuming CommentForm is defined for the comment creation
+from .forms import CommentForm  
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
