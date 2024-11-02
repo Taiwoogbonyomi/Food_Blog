@@ -1,6 +1,9 @@
-<!-- foodblog/templates/foodblog/base.html -->
-
 {% load static %}
+
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -40,6 +43,27 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'recipe_list' %}active{% endif %}"
                            href="{% url 'recipe_list' %}">Home</a>
                     </li>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.resolver_match.url_name == 'recipe_list' %}active{% endif %}" href="{% url 'recipe_list' %}">Home</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </ul>
                 <span class="navbar-text text-muted">
                     Sharing delicious recipes from around the world!
