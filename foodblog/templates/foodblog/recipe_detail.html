@@ -28,7 +28,13 @@
                     <li>{{ step.strip }}</li>
                 {% endfor %}
             </ol>
-
+            {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
             <!-- Upvote / Downvote Section -->
             <div class="d-flex align-items-center my-4">
                 <form action="{% url 'recipe_upvote' recipe.pk %}" method="POST" class="me-3">
