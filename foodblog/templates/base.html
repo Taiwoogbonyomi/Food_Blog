@@ -43,13 +43,7 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'recipe_list' %}active{% endif %}"
                            href="{% url 'recipe_list' %}">Home</a>
                     </li>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.resolver_match.url_name == 'recipe_list' %}active{% endif %}" href="{% url 'recipe_list' %}">Home</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ms-auto">
+                    
                             {% if user.is_authenticated %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -71,7 +65,13 @@
             </div>
         </div>
     </nav>
-
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <main class="flex-shrink-0 main-bg">
         {% block content %}{% endblock content %}
     </main>

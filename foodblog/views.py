@@ -31,18 +31,33 @@ class RecipeDetailView(DetailView):
 
 @method_decorator(login_required, name='dispatch')
 class CommentCreateView(CreateView):
-    model = Comment
-    form_class = CommentForm
-    template_name = 'foodblog/add_comment.html'
+    def post(self, request, pk):
+        recipe = get_object_or_404(Recipe, pk=pk)
+        form = CommentForm(request.POST)
 
-    def form_valid(self, form):
-        form.instance.recipe = get_object_or_404(Recipe, pk=self.kwargs['pk'])
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.recipe = recipe
+            comment.author = request.user
+            comment.save()
+            
+            # Add success message
+            messages.success(request, 'Your comment has been posted successfully!')
 
-    def get_success_url(self):
-        return redirect('recipe_detail', pk=self.object.recipe.pk)
+            return redirect('recipe_detail', pk=recipe.pk)
 
+        return render(request, 'recipe_detail.html', {
+            'recipe': recipe,
+            'form': form,
+        })
+
+    def get(self, request, pk):
+        recipe = get_object_or_404(Recipe, pk=pk)
+        form = CommentForm()
+        return render(request, 'recipe_detail.html', {
+            'recipe': recipe,
+            'form': form,
+        })
 
 def signup(request):
     if request.method == 'POST':

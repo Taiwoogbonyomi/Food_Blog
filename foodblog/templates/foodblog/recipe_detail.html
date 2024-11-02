@@ -10,10 +10,10 @@
             <p class="text-muted">{{ recipe.created_at|date:"F j, Y" }} by {{ recipe.author }}</p>
             <p>{{ recipe.description }}</p>
 
-            <!-- Recipe Image 
+            <!--Recipe Image--> 
             {% if recipe.image %}
                 <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="img-fluid mb-3">
-            {% endif %} -->
+            {% endif %}
 
             <h3>Ingredients</h3>
             <ul>

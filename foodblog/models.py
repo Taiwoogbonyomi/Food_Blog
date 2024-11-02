@@ -10,10 +10,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-from django.db import models
-from django.contrib.auth.models import User
-from django.utils.text import slugify
-from django.utils import timezone
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
