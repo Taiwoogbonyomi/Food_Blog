@@ -4,6 +4,7 @@ from .models import Recipe, Comment
 from .forms import CommentForm  
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.forms import UserCreationForm
 
 
 class RecipeListView(ListView):
@@ -38,6 +39,17 @@ class CommentCreateView(CreateView):
 
     def get_success_url(self):
         return redirect('recipe_detail', pk=self.object.recipe.pk)
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
 
 @login_required
 def recipe_upvote(request, pk):
