@@ -11,12 +11,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -37,15 +31,15 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
-def save(self, *args, **kwargs):
-    if not self.slug:
-        original_slug = slugify(self.title)
-        self.slug = original_slug
-        counter = 1
-        while Recipe.objects.filter(slug=self.slug).exists():
-            self.slug = f"{original_slug}-{counter}"
-            counter += 1
-    super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            original_slug = slugify(self.title)
+            self.slug = original_slug
+            counter = 1
+            while Recipe.objects.filter(slug=self.slug).exists():
+                self.slug = f"{original_slug}-{counter}"
+                counter += 1
+        super().save(*args, **kwargs)
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")

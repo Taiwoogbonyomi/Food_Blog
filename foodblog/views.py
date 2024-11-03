@@ -1,13 +1,12 @@
 from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import get_object_or_404, render, redirect
-from .models import Recipe, Comment
-from .forms import CommentForm  
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login
-from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from .models import Recipe, Comment
+from .forms import CommentForm  
 
 
 class RecipeListView(ListView):
@@ -19,6 +18,7 @@ class RecipeListView(ListView):
     def get_queryset(self):
         return Recipe.objects.order_by('-created_at') 
 
+
 class RecipeDetailView(DetailView):
     model = Recipe
     template_name = 'foodblog/recipe_detail.html'
@@ -27,37 +27,32 @@ class RecipeDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['ingredients'] = self.object.ingredients.splitlines()
         context['comments'] = self.object.comments.all()
+        context['form'] = CommentForm()
         return context
+
 
 @method_decorator(login_required, name='dispatch')
 class CommentCreateView(CreateView):
-    def post(self, request, pk):
-        recipe = get_object_or_404(Recipe, pk=pk)
-        form = CommentForm(request.POST)
+    model = Comment
+    form_class = CommentForm
+    template_name = 'foodblog/recipe_detail.html'
 
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.recipe = recipe
-            comment.author = request.user
-            comment.save()
-            
-            # Add success message
-            messages.success(request, 'Your comment has been posted successfully!')
+    def form_valid(self, form):
+        recipe = get_object_or_404(Recipe, pk=self.kwargs['pk'])
+        form.instance.recipe = recipe
+        form.instance.author = self.request.user
+        messages.success(self.request, 'Your comment has been posted successfully!')
+        return super().form_valid(form)
 
-            return redirect('recipe_detail', pk=recipe.pk)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['recipe'] = get_object_or_404(Recipe, pk=self.kwargs['pk'])
+        context['comments'] = context['recipe'].comments.all()
+        return context
 
-        return render(request, 'recipe_detail.html', {
-            'recipe': recipe,
-            'form': form,
-        })
+    def get_success_url(self):
+        return redirect('recipe_detail', pk=self.kwargs['pk'])
 
-    def get(self, request, pk):
-        recipe = get_object_or_404(Recipe, pk=pk)
-        form = CommentForm()
-        return render(request, 'recipe_detail.html', {
-            'recipe': recipe,
-            'form': form,
-        })
 
 def signup(request):
     if request.method == 'POST':
@@ -78,23 +73,27 @@ def custom_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home')  # Redirect to your desired page
+            return redirect('home')  
         else:
             messages.error(request, 'Invalid username or password.')
     else:
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
 
+
 @login_required
 def recipe_upvote(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
     recipe.upvotes += 1
     recipe.save()
+    messages.success(request, 'You have upvoted this recipe!')
     return redirect('recipe_detail', pk=pk)
+
 
 @login_required
 def recipe_downvote(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
     recipe.downvotes += 1
     recipe.save()
+    messages.success(request, 'You have downvoted this recipe!')
     return redirect('recipe_detail', pk=pk)

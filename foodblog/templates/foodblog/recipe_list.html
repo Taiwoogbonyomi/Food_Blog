@@ -20,7 +20,7 @@
                 </div>
             </div>
         {% empty %}
-            <p class="text-center">No recipes found.</p>
+            <p class="text-center">No recipes found. Consider adding some delicious recipes!</p>
         {% endfor %}
     </div>
 
@@ -29,17 +29,23 @@
         <nav aria-label="Page navigation">
             <ul class="pagination">
                 {% if recipes.has_previous %}
-                <li>
-                    <a href="?page={{ recipes.previous_page_number }}"class="page-link">Previous &laquo;</a>
-                </li>
+                    <li class="page-item">
+                        <a href="?page={{ recipes.previous_page_number }}" class="page-link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
                 {% endif %}
 
-                <li class="page-item active"><span class="page-link">{{ recipes.number }}</span></li>
+                <li class="page-item active">
+                    <span class="page-link">{{ recipes.number }}</span>
+                </li>
 
                 {% if recipes.has_next %}
-                <li>
-                    <a href="?page={{ recipes.next_page_number }}"class="page-link">NEXT &raquo;</a>
-                </li>
+                    <li class="page-item">
+                        <a href="?page={{ recipes.next_page_number }}" class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
                 {% endif %}
             </ul>
         </nav>
