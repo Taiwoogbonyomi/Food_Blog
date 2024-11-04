@@ -18,25 +18,16 @@
             <h3>Ingredients</h3>
             <ul>
                 {% for ingredient in recipe.ingredients.split %}
-                    <li>{{ ingredient.strip }}</li>
+                    <li>{{ ingredient.splitlines }}</li>
                 {% endfor %}
             </ul>
 
             <h3>Steps</h3>
             <ol>
                 {% for step in recipe.steps.splitlines %}
-                    <li>{{ step.strip }}</li>
+                    <li>{{ step }}</li>
                 {% endfor %}
             </ol>
-
-            <!-- Message Display -->
-            {% if messages %}
-                <ul class="messages list-unstyled">
-                    {% for message in messages %}
-                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
 
             <!-- Upvote / Downvote Section -->
             <div class="d-flex align-items-center my-4">

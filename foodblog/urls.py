@@ -10,6 +10,6 @@ urlpatterns = [
     path('recipe/<int:pk>/upvote/', recipe_upvote, name='recipe_upvote'),
     path('recipe/<int:pk>/downvote/', recipe_downvote, name='recipe_downvote'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='account_logout'),
-    path('login/', views.custom_login, name='login'),  
+    path('login/', views.custom_login, name='home'),  
     path('signup/', views.signup, name='signup'),  
 ]
