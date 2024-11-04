@@ -2,18 +2,17 @@
 
 {% block content %}
 <div class="container mt-5">
+   {% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
     <h2>Add a Comment</h2>
     <hr>
-
     <form method="POST" action="{% url 'add_comment' recipe.pk %}">
         {% csrf_token %}
         <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="mb-3">
-            <label for="comment" class="form-label">Comment</label>
-            <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Your comment" required></textarea>
+            <label for="id_content" class="form-label">Comment</label>
+            <textarea class="form-control" id="id_content" name="content" rows="3" placeholder="Write your comment here..." required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit Comment</button>
     </form>
