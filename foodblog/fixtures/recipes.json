@@ -5,7 +5,7 @@
         "fields": {
             "title": "Classic Spaghetti Carbonara",
             "description": "A creamy and delicious pasta dish from Italy.",
-            "ingredients": "Spaghetti, Eggs, Parmesan cheese, Pancetta, Black pepper",
+            "ingredients": "Spaghetti\n Eggs\n Parmesan cheese\n Pancetta\n Black pepper",
             "steps": "Boil pasta.\n  Cook pancetta until crispy.\n  Mix eggs with Parmesan.\n  Combine and serve.",
             "category": 1,
             "author": 1,
@@ -21,7 +21,7 @@
         "fields": {
             "title": "Chicken Tikka Masala",
             "description": "A popular Indian curry dish with grilled marinated chicken.",
-            "ingredients": "Chicken, Yogurt, Garlic, Ginger, Spices, Tomatoes, Cream",
+            "ingredients": "Chicken\n Yogurt\n Garlic\n Ginger\n Spices\n Tomatoes\n Cream",
             "steps": "Marinate chicken.\n  Grill until charred.\n  Prepare sauce.\n  Simmer chicken in sauce and serve.",
             "category": 2,
             "author": 1,
@@ -37,7 +37,7 @@
         "fields": {
             "title": "Beef Stroganoff",
             "description": "A classic Russian dish with tender beef strips and a creamy mushroom sauce.",
-            "ingredients": "Beef, Mushrooms, Onion, Garlic, Sour cream, Beef broth",
+            "ingredients": "Beef\n Mushrooms\n Onion\n Garlic\n Sour cream\n Beef broth",
             "steps": "Sear beef strips.\n  Sauté mushrooms and onions.\n  Add beef broth and reduce.\n  Stir in sour cream and serve over noodles.",
             "category": 3,
             "author": 1,
@@ -53,7 +53,7 @@
         "fields": {
             "title": "Avocado Toast with Poached Egg",
             "description": "A quick and nutritious breakfast option with creamy avocado and a perfectly poached egg.",
-            "ingredients": "Bread, Avocado, Egg, Salt, Pepper, Lemon juice",
+            "ingredients": "Bread\n Avocado\n Egg\n Salt\n Pepper\n Lemon juice",
             "steps": "Toast bread.\n  Mash avocado with salt, pepper, and lemon juice.\n  Spread avocado on toast.\n  Top with a poached egg.",
             "category": 4,
             "author": 1,
@@ -69,7 +69,7 @@
         "fields": {
             "title": "French Onion Soup",
             "description": "A comforting French soup with caramelized onions, beef broth, and melted cheese.",
-            "ingredients": "Onions, Butter, Beef broth, French bread, Gruyere cheese",
+            "ingredients": "Onions\n Butter\n Beef broth\n French bread\n Gruyere cheese",
             "steps": "Caramelize onions in butter.\n  Add beef broth and simmer.\n  Pour soup into bowls.\n  Top with bread and cheese, broil until melted.",
             "category": 5,
             "author": 1,
@@ -85,7 +85,7 @@
         "fields": {
             "title": "Sushi Rolls",
             "description": "Homemade sushi rolls with fresh ingredients and customizable fillings.",
-            "ingredients": "Sushi rice, Nori sheets, Cucumber, Avocado, Salmon, Soy sauce",
+            "ingredients": "Sushi rice\n Nori sheets\n Cucumber\n Avocado\n Salmon\n Soy sauce",
             "steps": "Prepare sushi rice.\n  Place rice on nori.\n  Add fillings and roll.\n  Slice and serve with soy sauce.",
             "category": 6,
             "author": 1,
@@ -101,7 +101,7 @@
         "fields": {
             "title": "Tacos al Pastor",
             "description": "Traditional Mexican tacos with marinated pork and pineapple.",
-            "ingredients": "Pork, Pineapple, Onion, Cilantro, Corn tortillas, Lime",
+            "ingredients": "Pork\n Pineapple\n Onion\n Cilantro\n Corn tortillas\n Lime",
             "steps": "Marinate pork with spices.\n Grill with pineapple.\n Slice and serve on tortillas with toppings.",
             "category": 2,
             "author": 1,
@@ -117,7 +117,7 @@
         "fields": {
             "title": "Mushroom Risotto",
             "description": "A creamy Italian rice dish made with mushrooms and Parmesan cheese.",
-            "ingredients": "Arborio rice, Mushrooms, Onion, Garlic, Parmesan, White wine",
+            "ingredients": "Arborio rice\n Mushrooms\n Onion\n Garlic\n Parmesan\n White wine",
             "steps": "Sauté onions and mushrooms.\n  Add rice and wine.\n  Gradually add broth, stirring until creamy.\n  Stir in Parmesan and serve.",
             "category": 3,
             "author": 1,
