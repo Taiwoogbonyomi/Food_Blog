@@ -95,6 +95,18 @@ body {
 }
 
 
+/* Button Styles */
+.btn-primary {
+    background-color: #dc3545; 
+    border: none; 
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c82333; 
+}
+
+
 
 
 
