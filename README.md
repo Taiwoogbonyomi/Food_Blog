@@ -69,38 +69,46 @@ The database model used for this project is shown below and it was created using
 
 
 ## Site Structure
+The structure of TastyYum app organizes content and functionality for easy navigation and user experience.
 
-<details>
-- Users can navigate through the page here
-_ Users can view recipes but they cannot comment on recipes unless they are logged in.
-- Users can create an account from the Signup page.
-- Users can login from the Login page.
+### **Home page**
+Users can navigate through the page here
 
-<details>
-<summary>Home page</summary>
+<details><summary><b>Home page</b></summary>
 
 ![Screenshot of home page](/readme/assets/images/home-page.png)
+</details><br>
 
-</details>
-<details>
-<summary>View recipe and add comment page</summary>
+### **Views recipes and add comments**
+ Users can view recipes but they cannot comment on recipes unless they are logged in.
+<details><summary><b>View recipe and add comment page</b></b></summary>
 
 ![Screenshot of home page](/readme/assets/images/view-recipe%20and%20add-comment.png)
+</details><br>
 
-</details>
-<details>
-<summary>Signup page</summary>
+### **Sign Up**
+New users can create an account from the Signup page.
+
+<details><summary><b>Sign Up</b></summary>
 
 ![Screenshot of Signup page](/readme/assets/images/sign-up.png)
+</details><br/>
 
-</details>
-<details>
-<summary>Login page</summary>
+### **Log in**
+Users can login from the Login page.
+
+<details><summary><b>Log in</b></summary>
 
 ![Screenshot of Login page](/readme/assets/images/log-in.png)
+</details><br/>
 
-</details>
+### **Admin Area**
+This page gives the administrator a view with information about i.e. total number of users, number of comments and number of posts. In this view the administrator also can add new recipes, categories the recipes, add and delete comments.
 
+<details><summary><b>Admin Area</b></summary>
+
+![Screenshot of admin page](/readme/assets/images/admin-nav.png)
+</details><br/>
 
 
 
