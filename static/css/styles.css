@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, h6, p, ul, li {
+body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -10,6 +10,11 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa; 
     color: #343a40; 
+}
+
+/* Main Background Color */
+.main-bg {
+    background-color: #fff; /* White background for main sections */
 }
 
 
