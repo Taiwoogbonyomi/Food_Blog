@@ -14,8 +14,32 @@ body {
 
 /* Main Background Color */
 .main-bg {
-    background-color: #fff; /* White background for main sections */
+    background-color: #ffffff; 
 }
+
+/* Navigation Styles */
+.navbar {
+    background-color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.nav-link {
+    color: #343a40; 
+}
+
+.nav-link:hover {
+    color: #dc3545; 
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.red-o {
+    color: #dc3545; 
+}
+
 
 
 
