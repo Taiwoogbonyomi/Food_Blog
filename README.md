@@ -57,6 +57,19 @@ The database model used for this project is shown below and it was created using
 ![Database schema](readme/assets/images/ERD.png)
 [Back to top](<#table-of-content>)
 
+
+# **User Experience (UX)**
+
+## Wireframes
+The wireframes for the site were created in the software [Balsamiq](https://balsamiq.com). The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's worth mentioning that there are visual differences compared to the wireframes, the reason being design choices that was made during the creation process.
+
+<details><summary><b>Wireframes</b></summary>
+
+![Wireframes](readme/assets/images/desktop-wireframe.png)
+![Wireframes](readme/assets/images/tablet-wireframe.png)
+![Wireframes](readme/assets/images/mobile-wireframe.png)
+</details><br/>
+
 #### 👤 User Stories
 1. As a user, I want to easily browse or search for dishes based on cuisine, dietary preferences, or ingredients, so that I can quickly find recipes that suit my tastes or dietary needs.
 2. As a user, I want to leave comments on recipes, so that I can ask questions, share tips, or leave feedback for other users.
@@ -122,7 +135,54 @@ This page gives the administrator a view with information about i.e. total numbe
 * Prevent users from voting multiple times on the same recipe (i.e., they can only upvote or downvote once).
 * Add funtion to allow user search for recipes
 
+[Back to top](<#table-of-content>)
+
+# Testing
+
+## Code Validation
+The code on the 'TastyYum' site has been tested through W3C Markup Validation Service, W3C CSS Validation Service and JSHint. Errors were at first found on the site in the W3C Markup Validation Service but could quite easily be fixed (see bugs section). One error appeared as well in the W3C CSS Validation but that was connected to Font Awesome and not to the site code itself (see bugs section).
+
+### Markup Validation
+After fixing the inital errors that W3C Markup Validation Service reported, no errors were returned.
+<details><summary><b>HTML Validation Result</b></summary>
+
+![HTML Result ](readme/assets/images/html-checker.png)
+</details><br/>
+
+[Back to top](<#table-of-content>)
 ## Languages
+
+
+### CSS Validaton
+When validating my own code the W3C CSS Validator reports no errors.
+
+<details><summary><b>CSS Validation Result</b></summary>
+
+![CSS Result](readme/assets/images/css-validator.png)
+</details><br/>
+
+[Back to top](<#table-of-content>)
+
+### Browser Compatibility
+* Google Chrome Version (106.0.5249.119)
+* Mozilla Firefox (version 105.0.3)
+* Min (version 1.26.0)
+* Apple Safari (version 16.0)
+* Microsoft Edge (version 106.0.1370.47)
+
+[Back to top](<#table-of-content>)
+
+
+### Lighthouse
+Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *index page*, *review details page*, *the admin area* and *the about page*. The testing showed the following:
+
+* Index Page - Performance: 75, Accessibility: 100, Best Practises: 100, SEO: 92
+
+
+<details><summary><b>Lighthouse Result</b></summary>
+
+![Lighthouse Index Result](readme/assets/images/lighthouse-check.png)
+</details><br/>
 
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the site.
 * [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
@@ -148,5 +208,60 @@ This page gives the administrator a view with information about i.e. total numbe
 * [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 * [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness.
 
+[Back to top](<#table-of-content>)
 
 
+#### 📦 Local Deployment  
+1. Clone the repository from GitHub by clicking the "Code" button and copying the URL.
+2. Open your preferred IDE and open a terminal session in the directory you want to clone the repository to.
+3. Type `git clone` followed by the URL you copied in step 1 and press enter.
+4. Install the required dependencies by typing `pip install -r requirements.txt` in the terminal.
+5. Note: The project is setup to use environment variables. You will need to set these up in your local environment. See [Environment Variables](#environment-variables) for more information.
+6. Connect your database of choice and run the migrations by typing `python manage.py migrate` in the terminal.
+7. Create a superuser by typing `python manage.py createsuperuser` in the terminal and following the prompts.
+8. Optional: Fixtures for Flight, Airport and Aircraft models are included in the project in the `fixtures` directory. To add pre-populated data to the database, run `python manage.py loaddata fixtures/[fixture_name].json`.
+9. Run the app by typing `python manage.py runserver` in the terminal and opening the URL in your browser.
+
+#### 💜 Heroku Deployment
+1. Login to the Heroku dashboard and create a new app.
+2. Connect your GitHub repository to your Heroku app.
+3. In the Settings tab, ensure that the Python Buildpack is added.
+4. Set environment variables in the Config Vars section of the Settings tab.
+5. In the Deploy tab, enable automatic deploys from your GitHub repository.
+6. Click the "Deploy Branch" button to deploy the app.
+7. Once the app has been deployed, click the "Open App" button to view the app.
+8. If using S3, you will need to set up an S3 bucket and add the environment variables to your Heroku app (see tutorial [here](https://testdriven.io/blog/storing-django-static-and-media-files-on-amazon-s3/) for reference.)
+
+[Back to top](<#table-of-content>)
+
+#### 📐 Environment Variables
+- For local deployment, you will need to create a `.env` file in the root directory of the project and set the environment variables in this file.
+- For Heroku deployment, you will need to set the environment variables through the Heroku CLI or through the Heroku dashboard under 'Config Vars'.
+- You need to define the following variables:
+  - If using a Postgres database:
+    - `DATABASE_URL` - the URL for your Postgres database.
+    - `NAME` - the name of your database.
+    - `USER` - the username for your database.
+    - `PASSWORD` - the password for your database.
+    - `HOST` - the host for your database.
+    - `PORT` - the port for your database.
+  - Django settings:
+    - `SECRET_KEY` - the secret key for your Django project.
+    - `DEBUG` - set to `True` for development, `False` for production.
+  </details>
+  
+<br>
+<br>
+<br>
+
+---
+
+# 👋 Credits
+
+<details>
+[Favicon.io](https://favicon.io/) - used to create favicon.
+[pexels.com](https://www.pexels.com/)- used to generate all the images
+
+</details>
+
+[Back to top](<#table-of-content>)
