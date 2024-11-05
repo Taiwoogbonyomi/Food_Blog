@@ -116,6 +116,17 @@ body {
 }
 
 
+/* Input and Form Styles */
+input, textarea {
+    border: 1px solid #ced4da; 
+    border-radius: 4px; 
+    transition: border-color 0.3s; 
+}
+
+input:focus, textarea:focus {
+    border-color: #dc3545; 
+    outline: none;
+}
 
 
 
