@@ -54,6 +54,7 @@ The goal of the site owner of TastyYum is to ensure the platform's growth, user 
 ### Database Schema
 The database model used for this project is shown below and it was created using [Lucidchart](https://lucid.app/lucidchart/)
 ![Database schema](readme/assets/images/ERD.png)
+[Back to top](<#table-of-content>)
 
 #### 👤 User Stories
 1. As a user, I want to easily browse or search for dishes based on cuisine, dietary preferences, or ingredients, so that I can quickly find recipes that suit my tastes or dietary needs.
@@ -64,6 +65,41 @@ The database model used for this project is shown below and it was created using
 6. As a user accessing the site from my phone, I want the interface to be fully responsive, so that I can comfortably browse and read recipes on a smaller screen.
 7. As an owner looking to grow the platform, I want analytics on recipe views, user engagement, and popular content, so that I can make data-driven decisions to improve the site.
 8. As an admin, I want the ability to moderate user-generated content, so that I can ensure recipes and comments meet quality and community guidelines.
+[Back to top](<#table-of-content>)
+
+
+## Site Structure
+
+<details>
+- Users can navigate through the page here
+_ Users can view recipes but they cannot comment on recipes unless they are logged in.
+- Users can create an account from the Signup page.
+- Users can login from the Login page.
+
+<details>
+<summary>Home page</summary>
+
+![Screenshot of home page](/readme/assets/images/home-page.png)
+
+</details>
+<details>
+<summary>View recipe and add comment page</summary>
+
+![Screenshot of home page](/readme/assets/images/view-recipe%20and%20add-comment.png)
+
+</details>
+<details>
+<summary>Signup page</summary>
+
+![Screenshot of Signup page](/readme/assets/images/sign-up.png)
+
+</details>
+<details>
+<summary>Login page</summary>
+
+![Screenshot of Login page](/readme/assets/images/log-in.png)
+
+</details>
 
 
 
