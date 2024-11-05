@@ -94,7 +94,6 @@ body {
     margin-top: auto;
 }
 
-
 /* Button Styles */
 .btn-primary {
     background-color: #dc3545; 
@@ -105,6 +104,17 @@ body {
 .btn-primary:hover {
     background-color: #c82333; 
 }
+
+/* Pagination Styles */
+.pagination {
+    margin-top: 20px; 
+}
+
+.page-item.active .page-link {
+    background-color: #dc3545; 
+    border-color: #dc3545; 
+}
+
 
 
 
