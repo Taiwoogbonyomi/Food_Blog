@@ -10,6 +10,8 @@ urlpatterns = [
     path('recipe/<int:pk>/upvote/', recipe_upvote, name='recipe_upvote'),
     path('recipe/<int:pk>/downvote/', recipe_downvote, name='recipe_downvote'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='account_logout'),
+    path('comment/<int:pk>/edit/', views.CommentEditView.as_view(), name='comment_edit'),
+    path('comment/<int:pk>/delete/', views.CommentDeleteView.as_view(), name='comment_delete'),
     path('login/', views.custom_login, name='home'),  
     path('signup/', views.signup, name='signup'),  
 ]
