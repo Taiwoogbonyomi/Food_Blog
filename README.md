@@ -6,7 +6,8 @@ TastyYum is a web application designed for food enthusiasts to explore, share, a
 ![TastyYum responsive design](readme/assets/images/responsive-design.png)
 
 # Table of Content
-[**Project**](<#project>)
+
+* [**Project**](<#project>)
     * [Objective](<#objective>)
     * [Site Users Goal](<#site-users-goal>)
     * [Site Owners Goal](<#site-owners-goal>)
@@ -109,6 +110,43 @@ This page gives the administrator a view with information about i.e. total numbe
 
 ![Screenshot of admin page](/readme/assets/images/admin-nav.png)
 </details><br/>
+
+### Features Left to Implement
+* Add functionalities to llow users to view and edit their profiles, including changing their passwords and updating personal information.
+* Allow users to edit their submitted recipes.
+* Implement functionality for users to delete their recipes.
+* Add categories or tags to recipes for better organization and filtering
+* Implement the ability for users to edit their comments.
+* Allow users to delete their comments.
+* Enable users to reply to other users’ comments, creating a threaded discussion.
+* Prevent users from voting multiple times on the same recipe (i.e., they can only upvote or downvote once).
+* Add funtion to allow user search for recipes
+
+## Languages
+
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the site.
+* [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
+* [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
+
+## Frameworks & Software
+* [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps building solid, responsive, mobile-first sites
+* [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the Review | Alliance site
+* [Balsamiq](https://balsamiq.com/) - Used to create the wireframe.
+* [Microsoft Excel](https://www.microsoft.com/sv-se/microsoft-365/excel) - Used to create testing scenarios.
+* [Github](https://github.com/) - Used to host and edit the website.
+* [GitBash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Terminal in [Gitpod](https://www.gitpod.io) used to push changes to the GitHub repository.
+* [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to.
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
+* [Responsive Design Checker](https://ui.dev/amiresponsive) - Used for responsiveness check.
+* [Favicon](https://favicon.io/) - Used to create the favicon.
+* [Gitpod](https://gitpod.io/)- Used to create and edit this website.
+* [Cloudinary](https://cloudinary.com/) - A service that hosts all static files in the project.
+* [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
+* [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
+* [PEP8 Validation](http://pep8online.com/) - 
+* [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
+* [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness.
 
 
 
