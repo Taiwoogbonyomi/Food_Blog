@@ -17,6 +17,19 @@ body {
     background-color: #ffffff; 
 }
 
+/* Heading Styles */
+h2 {
+    margin-bottom: 20px; 
+    color: #343a40; 
+    text-align: center; 
+}
+
+/* Label Styles */
+label {
+    font-weight: bold; 
+    color: #343a40; 
+}
+
 /* Navigation Styles */
 .navbar {
     background-color: #ffffff; 
@@ -39,28 +52,6 @@ body {
 .red-o {
     color: #dc3545; 
 }
-
-
-/* Footer Styles */
-
-.footer {
-    background-color: #343a40; 
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer a {
-    color: #ffffff; /
-}
-
-.footer a:hover {
-    text-decoration: underline; 
-}
-
 
 /* Card Styles */
 .card {
@@ -98,6 +89,8 @@ body {
 .btn-primary {
     background-color: #dc3545; 
     border: none; 
+    width: 100%;
+    padding: 10px;
     transition: background-color 0.3s;
 }
 
@@ -117,15 +110,67 @@ body {
 
 
 /* Input and Form Styles */
+.container {
+    width: 100%; 
+    margin: auto;
+    padding: 20px; 
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
 input, textarea {
     border: 1px solid #ced4da; 
     border-radius: 4px; 
     transition: border-color 0.3s; 
 }
 
+/* Input Field Styles */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    border: 1px solid #ced4da; 
+    border-radius: 4px;
+    padding: 10px; 
+    width: 100%; 
+    margin-bottom: 15px; 
+    transition: border-color 0.3s; 
+}
+
 input:focus, textarea:focus {
     border-color: #dc3545; 
     outline: none;
+}
+
+.login-container, 
+.signup-container {
+    max-width: 400px; 
+    margin: auto; 
+    padding: 20px; 
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+/* Footer Styles */
+
+.footer {
+    background-color: #343a40; 
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #ffffff; /
+}
+
+.footer a:hover {
+    text-decoration: underline; 
 }
 
 /* Responsive Styles */
@@ -135,7 +180,11 @@ input:focus, textarea:focus {
     }
 }
 
-
+@media (max-width: 576px) {
+    .container {
+        padding: 15px; 
+    }
+}
 
 
 
