@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-taiwoogbonyomi-foodblog-mchfqro2fjo.ws.codeinstitute-ide.net', '.herokuapp.com'
+     '127.0.0.1' , '.herokuapp.com'
 ]
 
 # Application definition
@@ -100,7 +100,7 @@ DATABASES = {
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",
+    "https://localhost]",
     "https://*.herokuapp.com"
 ]
 
@@ -113,10 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME':'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME':'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME':'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
         'NAME':'django.contrib.auth.password_validation.NumericPasswordValidator',
