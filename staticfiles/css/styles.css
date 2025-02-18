@@ -1,0 +1,196 @@
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6;
+    background-color: #f8f9fa; 
+    color: #343a40; 
+}
+
+/* Main Background Color */
+.main-bg {
+    background-color: #ffffff; 
+}
+
+/* Heading Styles */
+h2 {
+    margin-bottom: 20px; 
+    color: #343a40; 
+    text-align: center; 
+}
+
+/* Label Styles */
+label {
+    font-weight: bold; 
+    color: #343a40; 
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.nav-link {
+    color: #343a40; 
+}
+
+.nav-link:hover {
+    color: #dc3545; 
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.red-o {
+    color: #dc3545; 
+}
+
+/* Card Styles */
+.card {
+    border: none; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 10px; 
+    height: 100%;
+}
+
+.card-img-top {
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-body {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body .btn {
+    margin-top: auto;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #dc3545; 
+    border: none; 
+    width: 100%;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c82333; 
+}
+
+/* Pagination Styles */
+.pagination {
+    margin-top: 20px; 
+}
+
+.page-item.active .page-link {
+    background-color: #dc3545; 
+    border-color: #dc3545; 
+}
+
+
+/* Input and Form Styles */
+.container {
+    width: 100%; 
+    margin: auto;
+    padding: 20px; 
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+input, textarea {
+    border: 1px solid #ced4da; 
+    border-radius: 4px; 
+    transition: border-color 0.3s; 
+}
+
+/* Input Field Styles */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    border: 1px solid #ced4da; 
+    border-radius: 4px;
+    padding: 10px; 
+    width: 100%; 
+    margin-bottom: 15px; 
+    transition: border-color 0.3s; 
+}
+
+input:focus, textarea:focus {
+    border-color: #dc3545; 
+    outline: none;
+}
+
+.login-container, 
+.signup-container {
+    max-width: 400px; 
+    margin: auto; 
+    padding: 20px; 
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+/* Footer Styles */
+
+.footer {
+    background-color: #343a40; 
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #ffffff; 
+}
+
+.footer a:hover {
+    text-decoration: underline; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 15px; 
+    }
+}
+
+
+
+
+
+
+
+
+

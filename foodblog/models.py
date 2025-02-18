@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-from django.utils import timezone
-from django.db import IntegrityError
+from django.utils import timezone  # noqa: F401
+from django.db import IntegrityError  # noqa: F401
 
 
 class Category(models.Model):
@@ -11,12 +11,19 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    ingredients = models.TextField(help_text="List ingredients, separated by commas")
-    steps = models.TextField(help_text="Describe each step for preparation")
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    ingredients = models.TextField(
+        help_text="List ingredients, separated by commas",  default=""
+    )
+    steps = models.TextField(
+        help_text="Describe each step for preparation"
+    )
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True
+    )
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='recipes/', blank=True, null=True)
     upvotes = models.IntegerField(default=0)
@@ -24,9 +31,8 @@ class Recipe(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
 
-
     class Meta:
-        ordering = ['-created_at'] 
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.title
@@ -41,12 +47,14 @@ class Recipe(models.Model):
                 counter += 1
         super().save(*args, **kwargs)
 
+
 class Comment(models.Model):
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="comments")
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, related_name="comments", null=True
+    )
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-   
 
     def __str__(self):
         return f"{self.author.username} - {self.content[:20]}"
