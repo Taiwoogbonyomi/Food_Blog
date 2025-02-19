@@ -64,6 +64,16 @@
                                 <h5 class="mt-0 mb-1">{{ comment.author }}</h5>
                                 <p>{{ comment.content }}</p>
                                 <small class="text-muted">{{ comment.created_at|date:"F j, Y, g:i a" }}</small>
+                                {% if user == comment.author %}
+                                <div class="mt-2">
+                                    <a href="{% url 'comment_update' comment.pk %}" class="btn btn-sm btn-outline-primary">
+                                        Edit
+                                    </a>
+                                    <a href="{% url 'comment_delete' comment.pk %}" class="btn btn-sm btn-outline-danger">
+                                        Delete
+                                    </a>
+                                </div>
+                            {% endif %}
                             </div>
                         </li>
                     {% endfor %}

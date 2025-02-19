@@ -6,8 +6,8 @@ from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import Recipe, Comment
-from .forms import CommentForm  
-from django.urls import reverse 
+from .forms import CommentForm
+from django.urls import reverse
 from django import forms
 
 
@@ -18,7 +18,7 @@ class RecipeListView(ListView):
     paginate_by = 3
 
     def get_queryset(self):
-        return Recipe.objects.order_by('-created_at') 
+        return Recipe.objects.order_by('-created_at')
 
 
 class RecipeDetailView(DetailView):
@@ -30,29 +30,32 @@ class RecipeDetailView(DetailView):
         context['ingredients'] = self.object.ingredients.splitlines()
         context['comments'] = self.object.comments.all()
         context['form'] = CommentForm()
-        return context 
+        return context
+
 
 @method_decorator(login_required, name='dispatch')
 class CommentCreateView(CreateView):
     model = Comment
     form_class = CommentForm
-    template_name = 'foodblog/recipe_detail.html'  
+    template_name = 'foodblog/recipe_detail.html'
 
     def form_valid(self, form):
         recipe = get_object_or_404(Recipe, pk=self.kwargs['pk'])
         form.instance.recipe = recipe
         form.instance.author = self.request.user
-        messages.success(self.request, 'Your comment has been posted successfully!')
+        messages.success(
+            self.request, 'Your comment has been posted successfully!')
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('recipe_detail', kwargs={'pk': self.kwargs['pk']})  
+        return reverse('recipe_detail', kwargs={'pk': self.kwargs['pk']})
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['recipe'] = get_object_or_404(Recipe, pk=self.kwargs['pk'])
         context['comments'] = context['recipe'].comments.all()
         return context
+
 
 def signup(request):
     if request.method == 'POST':
@@ -66,12 +69,15 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['content']  
+        fields = ['content']
         widgets = {
-            'content': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Write your comment here...'}),
+            'content': forms.Textarea(
+                attrs={'rows': 3, 'placeholder': 'Write your comment here...'
+                       }),
         }
         labels = {
             'content': 'Comment',
@@ -85,13 +91,13 @@ def custom_login(request):
             user = form.get_user()
             login(request, user)
             messages.success(request, 'Logged in successfully!')
-            return redirect('home')  
+            return redirect('home')
         else:
             messages.error(request, 'Invalid username or password.')
     else:
         form = AuthenticationForm()
-    
     return render(request, 'registration/login.html', {'form': form})
+
 
 @login_required
 def recipe_upvote(request, pk):
@@ -100,6 +106,7 @@ def recipe_upvote(request, pk):
     recipe.save()
     messages.success(request, 'You have upvoted this recipe!')
     return redirect('recipe_detail', pk=pk)
+
 
 @login_required
 def recipe_downvote(request, pk):
