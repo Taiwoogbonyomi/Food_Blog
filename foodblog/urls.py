@@ -29,7 +29,7 @@ urlpatterns = [
     path(
         'comment/<int:pk>/delete',
         CommentDeleteView.as_view(),
-        namw="comment_delete"
+        name="comment_delete"
     ),
     path(
         'recipe/<int:pk>/upvote/',
