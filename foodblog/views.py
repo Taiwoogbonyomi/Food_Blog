@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Recipe, Comment
 from .forms import CommentForm
@@ -99,6 +99,19 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         comment = self.get_object()
         return self.request.user == comment.author
 
+
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Comment
+    template_name = 'foodblog/comment_confirm_delete.html'
+    context_object_name = 'comment'
+
+    def get_success_url(self):
+        return reverse_lazy('recipe_detail', kwargs={'pk': self.object.recipe.pk})
+
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user == comment.author 
+    
 
 def custom_login(request):
     if request.method == 'POST':
