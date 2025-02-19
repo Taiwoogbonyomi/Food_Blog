@@ -106,12 +106,13 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     context_object_name = 'comment'
 
     def get_success_url(self):
-        return reverse_lazy('recipe_detail', kwargs={'pk': self.object.recipe.pk})
+        return reverse_lazy(
+            'recipe_detail', kwargs={'pk': self.object.recipe.pk})
 
     def test_func(self):
         comment = self.get_object()
-        return self.request.user == comment.author 
-    
+        return self.request.user == comment.author
+
 
 def custom_login(request):
     if request.method == 'POST':
