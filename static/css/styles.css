@@ -45,7 +45,7 @@ body {
 .container {
     flex-grow: 1; 
     width: 100%;
-    max-width: 900px;  /* Slightly smaller for better readability */
+    max-width: 900px;
     margin: auto;
     padding: 20px;
     background-color: #ffffff;
@@ -108,7 +108,7 @@ input:focus, textarea:focus {
     width: 100%;
     height: 120px; 
     resize: vertical; 
-    max-width: 100%; /* Prevents it from stretching too wide */
+    max-width: 100%; 
 }
 
 .comment-form .btn {
@@ -173,7 +173,7 @@ input:focus, textarea:focus {
 ============================ */
 .pagination {
     margin-top: 20px;
-    padding-bottom: 40px; /* Extra space before footer */
+    padding-bottom: 40px;
     text-align: center;
 }
 

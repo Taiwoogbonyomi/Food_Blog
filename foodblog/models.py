@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.utils import timezone  # noqa: F401
 from django.db import IntegrityError  # noqa: F401
+from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
@@ -25,6 +26,7 @@ class Recipe(models.Model):
         Category, on_delete=models.SET_NULL, null=True
     )
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    featured_image = CloudinaryField('image', default='placeholder')
     image = models.ImageField(upload_to='recipes/', blank=True, null=True)
     upvotes = models.IntegerField(default=0)
     downvotes = models.IntegerField(default=0)
@@ -55,6 +57,9 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return f"{self.author.username} - {self.content[:20]}"
