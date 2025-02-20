@@ -113,18 +113,98 @@
     },
     {
         "model": "foodblog.recipe",
-        "pk": 1,
+        "pk": 8,
         "fields": {
             "title": "Mushroom Risotto",
             "description": "A creamy Italian rice dish made with mushrooms and Parmesan cheese.",
             "ingredients": "Arborio rice\n Mushrooms\n Onion\n Garlic\n Parmesan\n White wine",
             "steps": "Sauté onions and mushrooms.\n  Add rice and wine.\n  Gradually add broth, stirring until creamy.\n  Stir in Parmesan and serve.",
-            "category": 6,
+            "category": 1,
             "author": 1,
             "upvotes": 85,
             "downvotes": 6,
             "created_at": "2024-10-29T12:00:00Z",
             "image": "recipes/mushroom-risotto.jpg"
+        }
+        
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 9,
+        "fields": {
+            "title": "Chicken Enchiladas",
+            "description": "A cheesy and spicy Mexican dish with tortillas filled with seasoned chicken.",
+            "ingredients": "Chicken breast\n Tortillas\n Cheese\n Enchilada sauce\n Onions\n Sour cream",
+            "steps": "Cook and shred chicken.\n Fill tortillas with chicken and cheese.\n Roll and place in baking dish.\n Cover with sauce and bake.\n Serve with sour cream.",
+            "category": 7,
+            "author": 1,
+            "upvotes": 32,
+            "downvotes": 4,
+            "created_at": "2024-12-15T17:10:00Z",
+            "image": "recipes/chicken-enchiladas.jpg"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 10,
+        "fields": {
+            "title": "Miso Soup",
+            "description": "A light and umami-rich Japanese soup made with miso paste and tofu.",
+            "ingredients": "Miso paste\n Dashi stock\n Tofu\n Green onions\n Seaweed",
+            "steps": "Heat dashi stock.\n Add miso paste and stir.\n Add tofu and seaweed.\n Garnish with green onions and serve.",
+            "category": 6,
+            "author": 1,
+            "upvotes": 18,
+            "downvotes": 1,
+            "created_at": "2024-12-10T12:20:00Z",
+            "image": "recipes/miso-soup.jpg"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 11,
+        "fields": {
+            "title": "Classic Pancakes",
+            "description": "Fluffy homemade pancakes, perfect for breakfast with syrup and butter.",
+            "ingredients": "Flour\n Eggs\n Milk\n Sugar\n Baking powder\n Butter\n Vanilla extract",
+            "steps": "Mix dry and wet ingredients.\n Heat skillet and pour batter.\n Flip pancakes when bubbles form.\n Serve with butter and syrup.",
+            "category": 4,
+            "author": 1,
+            "upvotes": 40,
+            "downvotes": 2,
+            "created_at": "2024-12-08T08:45:00Z",
+            "image": "recipes/classic-pancakes.jpg"
+        }
+    },
+    {
+        "model": "foodblog.recipe",
+        "pk": 12,
+        "fields": {
+            "title": "Borscht",
+            "description": "A classic Russian beet soup served hot or cold, often topped with sour cream.",
+            "ingredients": "Beets\n Cabbage\n Carrots\n Potatoes\n Onion\n Garlic\n Beef broth\n Sour cream",
+            "steps": "Chop vegetables.\n Sauté onions and garlic.\n Add beets, broth, and simmer.\n Garnish with sour cream and serve.",
+            "category": 3,
+            "author": 3,
+            "upvotes": 22,
+            "downvotes": 1,
+            "created_at": "2024-12-05T11:00:00Z",
+            "image": "recipes/borscht.jpg"
+        }
+    }, {
+        "model": "foodblog.recipe",
+        "pk": 13,
+        "fields": {
+            "title": "Classic Cheeseburger",
+            "description": "A juicy and flavorful burger with melted cheese and fresh toppings.",
+            "ingredients": "Ground beef\n Burger buns\n Cheese\n Lettuce\n Tomato\n Onion\n Pickles\n Ketchup\n Mustard",
+            "steps": "Form beef patties.\n Grill until cooked through.\n Add cheese and let it melt.\n Assemble with toppings on a bun.\n Serve with fries.",
+            "category": 8,
+            "author": 2,
+            "upvotes": 28,
+            "downvotes": 3,
+            "created_at": "2024-11-28T19:00:00Z",
+            "image": "recipes/cheeseburger.jpg"
         }
     }
 ]
