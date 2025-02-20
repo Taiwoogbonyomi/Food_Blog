@@ -35,13 +35,24 @@ class RecipeDetailView(DetailView):
         return context
 
 
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'foodblog/category_list.html'
+    context_object_name = 'categories'
+
+    def get_queryset(self):
+        return Category.objects.all()
+
+
 def recipes_by_category(request, category_id):
-    category = Category.objects.get(id=category_id)
+    category = get_object_or_404(Category, id=category_id)
     recipes = Recipe.objects.filter(category=category)
 
     return render(
-        request, 'foodblog/recipes_by_category.html',
-        {'recipes': recipes, 'category': category})
+        request,
+        'foodblog/recipes_by_category.html',
+        {'recipes': recipes, 'category': category}
+    )
 
 
 @method_decorator(login_required, name='dispatch')
