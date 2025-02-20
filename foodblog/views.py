@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .models import Recipe, Comment
+from .models import Recipe, Comment, Category
 from .forms import CommentForm
 from django.urls import reverse, reverse_lazy
 from django import forms
@@ -34,6 +34,11 @@ class RecipeDetailView(DetailView):
         context['form'] = CommentForm()
         return context
 
+def recipes_by_category(request, category_id):
+    category = Category.objects.get(id=category_id)  # Get category by ID
+    recipes = Recipe.objects.filter(category=category)  # Filter recipes by category
+    
+    return render(request, 'foodblog/recipes_by_category.html', {'recipes': recipes, 'category': category})
 
 @method_decorator(login_required, name='dispatch')
 class CommentCreateView(CreateView):
