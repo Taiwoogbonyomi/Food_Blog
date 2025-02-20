@@ -34,11 +34,15 @@ class RecipeDetailView(DetailView):
         context['form'] = CommentForm()
         return context
 
+
 def recipes_by_category(request, category_id):
-    category = Category.objects.get(id=category_id)  # Get category by ID
-    recipes = Recipe.objects.filter(category=category)  # Filter recipes by category
-    
-    return render(request, 'foodblog/recipes_by_category.html', {'recipes': recipes, 'category': category})
+    category = Category.objects.get(id=category_id)
+    recipes = Recipe.objects.filter(category=category)
+
+    return render(
+        request, 'foodblog/recipes_by_category.html',
+        {'recipes': recipes, 'category': category})
+
 
 @method_decorator(login_required, name='dispatch')
 class CommentCreateView(CreateView):
