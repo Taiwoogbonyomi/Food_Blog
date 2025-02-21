@@ -11,8 +11,10 @@
             <p>{{ recipe.description }}</p>
 
             <!-- Recipe Image --> 
-            {% if recipe.image %}
-                <img src="{{ recipe.image.url }}" alt="Image of {{ recipe.title }}" class="img-fluid mb-3">
+            {% if recipe.featured_image %}
+                <img src="{{ recipe.featured_image.url }}" alt="Image of {{ recipe.title }}" class="img-fluid mb-3">
+            {% else %}
+                <img src="{% static 'images/default.jpg' %}" alt="Default Image" class="img-fluid mb-3">
             {% endif %}
 
             <h3>Ingredients</h3>

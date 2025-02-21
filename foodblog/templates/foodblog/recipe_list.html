@@ -9,7 +9,7 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
                     {% if recipe.image %}
-                        <img src="{{ recipe.image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}">
+                        <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="Image of {{ recipe.title }}">
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ recipe.title }}</h5>
