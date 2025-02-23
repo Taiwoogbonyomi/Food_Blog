@@ -7,10 +7,10 @@
     {% if recipes %}
         <div class="row">
             {% for recipe in recipes %}
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="clo-12 col-md-6 col-lg-4 mb-4">
                     <div class="card shadow-sm">
                         {% if recipe.featured_image %}
-                            <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                            <img src="{{ recipe.featured_image.url }}" class="card-img-top img-fluid" alt="{{ recipe.title }}">
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ recipe.title }}</h5>

@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views
 from .views import (
      RecipeListView, RecipeDetailView, CategoryListView,
      CommentCreateView, CommentUpdateView,
-     CommentDeleteView, recipe_upvote, recipe_downvote, signup
+     CommentDeleteView, recipe_upvote, recipe_downvote, signup, custom_login
     )
 from . import views
 
@@ -55,12 +55,12 @@ urlpatterns = [
     path(
         'accounts/logout/',
         auth_views.LogoutView.as_view(),
-        name='account_logout'
+        name='logout'
     ),
     path(
         'login/',
-        views.custom_login,
-        name='home'
+        custom_login,
+        name='login'
     ),
     path(
         'signup/',

@@ -46,13 +46,13 @@
                 <form action="{% url 'recipe_upvote' recipe.pk %}" method="POST" class="me-3">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-success" aria-label="Upvote">
-                        <i class="fas fa-thumbs-up"></i> Upvote ({{ recipe.upvotes }})
+                        <i class="fas fa-thumbs-up"></i> Upvote ({{ recipe.upvotes.count }})
                     </button>
                 </form>
                 <form action="{% url 'recipe_downvote' recipe.pk %}" method="POST">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-danger" aria-label="Downvote">
-                        <i class="fas fa-thumbs-down"></i> Downvote ({{ recipe.downvotes }})
+                        <i class="fas fa-thumbs-down"></i> Downvote ({{ recipe.downvotes.count }})
                     </button>
                 </form>
             </div>

@@ -20,7 +20,7 @@ class RecipeListView(ListView):
     paginate_by = 3
 
     def get_queryset(self):
-        return Recipe.objects.order_by('-created_at')
+        return Recipe.objects.all().order_by('-created_at')
 
 
 class RecipeDetailView(DetailView):
@@ -30,7 +30,7 @@ class RecipeDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['ingredients'] = self.object.ingredients.splitlines()
-        context['comments'] = self.object.comments.all()
+        context['comments'] = self.object.comments.order_by('-created_at')
         context['form'] = CommentForm()
         return context
 
@@ -74,22 +74,10 @@ class CommentCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['recipe'] = get_object_or_404(Recipe, pk=self.kwargs['pk'])
-        context['comments'] = context['recipe'].comments.all()
+        recipe = get_object_or_404(Recipe, pk=self.kwargs['pk'])
+        context['recipe'] = recipe
+        context['comments'] = recipe.comments.order_by('-created_at')
         return context
-
-
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}!')
-            return redirect('login')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
 
 
 class CommentForm(forms.ModelForm):
@@ -113,11 +101,11 @@ class CommentUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse_lazy(
-            'recipe_detail', kwargs={'pk': self.object.recipe.pk})
+            'recipe_detail', kwargs={'pk': self.object.recipe.pk}
+        )
 
     def test_func(self):
-        comment = self.get_object()
-        return self.request.user == comment.author
+        return self.request.user == self.get_object().author
 
 
 class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -127,11 +115,26 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def get_success_url(self):
         return reverse_lazy(
-            'recipe_detail', kwargs={'pk': self.object.recipe.pk})
+            'recipe_detail', kwargs={'pk': self.object.recipe.pk}
+        )
 
     def test_func(self):
-        comment = self.get_object()
-        return self.request.user == comment.author
+        return self.request.user == self.get_object().author
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(
+                request, f'Welcome, {username}! Your account has been created.'
+            )
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
 
 
 def custom_login(request):
@@ -141,7 +144,7 @@ def custom_login(request):
             user = form.get_user()
             login(request, user)
             messages.success(request, 'Logged in successfully!')
-            return redirect('home')
+            return redirect('recipe_list')
         else:
             messages.error(request, 'Invalid username or password.')
     else:
@@ -152,16 +155,28 @@ def custom_login(request):
 @login_required
 def recipe_upvote(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
-    recipe.upvotes += 1
-    recipe.save()
-    messages.success(request, 'You have upvoted this recipe!')
+
+    if request.user in recipe.upvotes.all():
+        recipe.upvotes.remove(request.user)
+        messages.info(request, 'You removed your upvote.')
+    else:
+        recipe.upvotes.add(request.user)
+        recipe.downvotes.remove(request.user)
+        messages.success(request, 'You upvoted this recipe!')
+
     return redirect('recipe_detail', pk=pk)
 
 
 @login_required
 def recipe_downvote(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
-    recipe.downvotes += 1
-    recipe.save()
-    messages.success(request, 'You have downvoted this recipe!')
+
+    if request.user in recipe.downvotes.all():
+        recipe.downvotes.remove(request.user)
+        messages.info(request, 'You removed your downvote.')
+    else:
+        recipe.downvotes.add(request.user)
+        recipe.upvotes.remove(request.user)
+        messages.success(request, 'You downvoted this recipe!')
+
     return redirect('recipe_detail', pk=pk)

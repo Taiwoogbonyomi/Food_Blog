@@ -21,17 +21,29 @@ class Recipe(models.Model):
         help_text="Describe each step for preparation"
     )
     category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True
+        Category, on_delete=models.SET_NULL, null=True, related_name="recipes"
     )
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="recipes"
+    )
     featured_image = CloudinaryField('image', default="default_recipe_image")
-    upvotes = models.IntegerField(default=0)
-    downvotes = models.IntegerField(default=0)
+    upvotes = models.ManyToManyField(
+        User, related_name="upvoted_recipes", blank=True
+    )
+    downvotes = models.ManyToManyField(
+        User, related_name="downvoted_recipes", blank=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
 
     class Meta:
         ordering = ['-created_at']
+
+    def total_upvotes(self):
+        return self.upvotes.count()
+
+    def total_downvotes(self):
+        return self.downvotes.count()
 
     def __str__(self):
         return self.title
@@ -49,10 +61,17 @@ class Recipe(models.Model):
 
 class Comment(models.Model):
     recipe = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, related_name="comments", null=True
+        Recipe, on_delete=models.CASCADE, related_name="comments"
     )
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
+    parent = models.ForeignKey(
+        "self",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="replies"
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
