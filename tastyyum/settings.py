@@ -103,6 +103,9 @@ DATABASES = {
 
 # Cloudinary settings
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
+CLOUDINARY_STORAGE = {
+    "SECURE": True
+}
 
 CSRF_TRUSTED_ORIGINS = [
     "https://localhost",
