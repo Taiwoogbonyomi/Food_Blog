@@ -70,34 +70,58 @@ The wireframes for the site were created in the software [Balsamiq](https://bals
 ![Wireframes](readme/assets/images/mobile-wireframe.png)
 </details><br/>
 
-#### 👤 User Stories
-1. As a user, I want to easily browse or search for dishes based on cuisine, dietary preferences, or ingredients, so that I can quickly find recipes that suit my tastes or dietary needs.
-2. As a user, I want to leave comments on recipes, so that I can ask questions, share tips, or leave feedback for other users.
-3. As a user, I want to be able to browse recipes and read instructions without needing to log in, so that I can get a feel for the site before registering.
-4. As a user, I want to find recipes that can be made quickly, so that I can prepare meals efficiently within my time constraints.
-5. As a user, I want to quickly scan recipes on the list page and see brief descriptions or ratings, so that I can decide which recipe interests me most before clicking through.
-6. As a user accessing the site from my phone, I want the interface to be fully responsive, so that I can comfortably browse and read recipes on a smaller screen.
-7. As an owner looking to grow the platform, I want analytics on recipe views, user engagement, and popular content, so that I can make data-driven decisions to improve the site.
-8. As an admin, I want the ability to moderate user-generated content, so that I can ensure recipes and comments meet quality and community guidelines.
+## 👤 User Stories
+Below the user stories for the project are listed to clarify why particular feature matters.
+
+### Site User
+|  | | |
+|:-------:|:--------|:--------|
+| As a Site User | I want to be able to browse recipes and read instructions without needing to log in, so that I can get a feel for the site before registering | &check; |
+| As a Site User | I want to create an account, so that I can save my favorite recipes and interact with the community | &check; |
+| As a Site User | I want to log in securely, so that I can ask questions, share tips, or leave feedback for other users | &check; |
+| As a Site User | I want to log out, so that my account stays secure | &check; |
+| As a Site User | I want to browse a list of recipes, so that I can explore different dishes | &check; |
+| As a Site User | I want to see the full details of a recipe, so that I can follow the instructions to cook it | &check; |
+| As a Site User | I want to submit a new recipe, so that I can share it with others.
+| As a Site User | I want to filter recipes by category, so that I can easily find recipes that interest me | &check; |
+| As a Site User | I want to leave a comment on a recipe, so that I can share my feedback or ask questions | &check; |
+| As a Site User | I want to browse recipes comfortably, so that I can use the website on my phone | &check; |
+| As a Site User | I want the interface to be fully responsive, so that I can comfortably browse and read recipes on a smaller screen | &check; |
+
+
+### Site Admin
+
+|  | | |
+|:-------:|:--------|:--------|
+| As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
+| As a Site Admin | I want to enforce secure login methods, so that user data remains protected  | &check; |
+| As a Site Admin | I want to view a list of all registered users, so that I can manage the community and remove unwanted users if necessary  | &check; |
+| As a Site Admin | I want to delete offensive or spam comments, so that the site remains a positive and respectful space  | &check; |
+| As a Site Admin | I want to create and organize recipe categories, so that users can easily find relevant recipes  | &check; |
+| As a Site Admin | I want the ability to moderate user-generated content, so that I can ensure recipes and comments meet quality and community guidelines.
+| As a Site Admin | I want to track site traffic and user activity, so that I can improve engagement and optimize content.
+| As a Site Admin | I want analytics on recipe views, user engagement, and popular content, so that I can make data-driven decisions to improve the site
+
+
 [Back to top](<#table-of-content>)
 
 
 ## Site Structure
-The structure of TastyYum app organizes content and functionality for easy navigation and user experience.
+The TastyYum website follows a structured layout for easy navigation and user experience. Below is the breakdown of the site's structure:
 
 ### **Home page**
 Users can navigate through the page here
 
 <details><summary><b>Home page</b></summary>
 
-![Screenshot of home page](/readme/assets/images/home-page.png)
+![Screenshot of home page](./readme/assets/images/home-page.png)
 </details><br>
 
 ### **Views recipes and add comments**
  Users can view recipes but they cannot comment on recipes unless they are logged in.
 <details><summary><b>View recipe and add comment page</b></b></summary>
 
-![Screenshot of home page](/readme/assets/images/view-recipe%20and%20add-comment.png)
+![Screenshot of home page](./readme/assets/images/view-recipe%20and%20add-comment.png)
 </details><br>
 
 ### **Sign Up**
@@ -105,7 +129,7 @@ New users can create an account from the Signup page.
 
 <details><summary><b>Sign Up</b></summary>
 
-![Screenshot of Signup page](/readme/assets/images/sign-up.png)
+![Screenshot of Signup page](./readme/assets/images/sign-up.png)
 </details><br/>
 
 ### **Log in**
@@ -113,7 +137,7 @@ Users can login from the Login page.
 
 <details><summary><b>Log in</b></summary>
 
-![Screenshot of Login page](/readme/assets/images/log-in.png)
+![Screenshot of Login page](./readme/assets/images/login.png)
 </details><br/>
 
 ### **Admin Area**
@@ -128,11 +152,7 @@ This page gives the administrator a view with information about i.e. total numbe
 * Add functionalities to llow users to view and edit their profiles, including changing their passwords and updating personal information.
 * Allow users to edit their submitted recipes.
 * Implement functionality for users to delete their recipes.
-* Add categories or tags to recipes for better organization and filtering
-* Implement the ability for users to edit their comments.
-* Allow users to delete their comments.
 * Enable users to reply to other users’ comments, creating a threaded discussion.
-* Prevent users from voting multiple times on the same recipe (i.e., they can only upvote or downvote once).
 * Add funtion to allow user search for recipes
 
 [Back to top](<#table-of-content>)
