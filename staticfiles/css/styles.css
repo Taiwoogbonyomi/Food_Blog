@@ -28,6 +28,19 @@ body {
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #343a40;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.red-y {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+.navbar-brand:hover{
+    text-decoration: none;
+    color: #dc3545;
 }
 
 .nav-link {
