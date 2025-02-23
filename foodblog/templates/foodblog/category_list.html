@@ -2,16 +2,24 @@
 
 {% block content %}
     <div class="container">
-        <h1>All Categories</h1>
-        <ul class="list-group">
+        <h1 class="text-center mb-4">All Categories</h1>
+        <div class="row">
             {% for category in categories %}
-                <li class="list-group-item">
-                    <a href="{% url 'recipes_by_category' category.id %}" class="text-decoration-none">{{ category.name }}</a>
-                </li>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        {% if category.image %}
+                            <img src="{{ category.image.url }}?w=400&h=250&c_fill" class="category-img" alt="{{ category.name }}">
+                        {% endif %}
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ category.name }}</h5>
+                            <a href="{% url 'recipes_by_category' category.id %}" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-            {% if not categories %}
-                <p>No categories available.</p>
-            {% endif %}
-        </ul>
+        </div>
+        {% if not categories %}
+            <p class="text-center text-muted">No categories available.</p>
+        {% endif %}
     </div>
 {% endblock %}
