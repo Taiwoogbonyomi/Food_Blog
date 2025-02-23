@@ -13,7 +13,7 @@
 
             <!-- Recipe Image --> 
             {% if recipe.featured_image %}
-                <img src="{{ recipe.featured_image.url|default:'' }}" alt="Image of {{ recipe.title }}" class="img-fluid mb-3">
+                <img src="{{ recipe.featured_image.url|add:'?secure=True' }}" alt="Image of {{ recipe.title }}" class="img-fluid mb-3">
             {% else %}
                 <img src="{% static 'images/default.jpg' %}" alt="Default Image" class="img-fluid mb-3">
             {% endif %}

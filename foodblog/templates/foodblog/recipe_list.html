@@ -8,7 +8,7 @@
             <div class="col-md-4 mb-4">
                 <div class="recipe card">
                     {% if recipe.featured_image %}
-                        <img src="{{ recipe.featured_image.url|default:'' }}" class="card-img-top" alt="Image of {{ recipe.title }}" style="height: 200px; object-fit: cover;">
+                        <img src="{{ recipe.featured_image.url|add:'?secure=True' }}" class="card-img-top" alt="Image of {{ recipe.title }}" style="height: 200px; object-fit: cover;">
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ recipe.title }}</h5>
