@@ -178,7 +178,7 @@ This page gives the administrator a view with information about i.e. total numbe
 
 ## Testing User Stories
 * As a Site User | I want to be able to browse recipes and read instructions without needing to log in, so that I can get a feel for the site before registering.
-  * The site has been structured in a way that even without creating accout the user can browse through the recipes but they won't be able to comment, upvote or downvote any recipe.
+  * The site has been structured in a way that even without creating account, the user can browse through the recipes but they won't be able to comment, upvote or downvote any recipe.
 * As a Site User | I want to create an account, so that I can save my favorite recipes and interact with the community 
   * In the navigation bar the user can click on sign up to create a new account.
 * As a Site User | I want to log in securely, so that I can comment, edit or delete my comment, upvote or downvote
@@ -193,11 +193,10 @@ This page gives the administrator a view with information about i.e. total numbe
   * The site has been created to be responsive on all devices irrespective of their size.
 * As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information
    * When the admin is logged in it is possible to choose the 'Log Out'-option in the navigation menu.
-| As a Site Admin | I want to enforce secure login methods, so that user data remains protected
 * As a Site Admin | I want to view a list of all registered users, so that I can manage the community and remove unwanted users if necessary 
   * When the admin is logged in, the admin can view the list of all registered users, the admin can add and delete users.
 * As a Site Admin | I want to delete offensive or spam comments, so that the site remains a positive and respectful space 
-   * When the user is logged in as an administrator / superuser a new item show up in the navigation menu called 'Admin Area'. In this area the user can read, update and delete comments. Creation of reviews can be made the same way as any logged in user. 
+   * When the user is logged in as an administrator / superuser a new item show up in the navigation menu called 'Admin Area'. In this area the user can read, update and delete comments. Creation of comments can be made the same way as any logged in user. 
 * As a Site Admin | I want to create and organize recipe categories, so that users can easily find relevant recipes.
   * When the Admin is logged in, there is a category area, where admin can create and organize recipes.
 
@@ -227,6 +226,18 @@ When validating my own code the W3C CSS Validator reports no errors.
 
 [Back to top](<#table-of-content>)
 
+### JavaScript Validation
+The JSHint validator results can be seen below:
+
+No errors were returned when passing through JSHint (script.js)
+
+<details><summary><b>JSHint Validation Result</b></summary>
+
+![JSHint Validation](./readme/assets/images/JShint.png)
+</details><br/>
+
+[Back to top](<#table-of-content>)
+
 ### PEP Validation
 PEP8 was used to validate the python codes.
 
@@ -245,12 +256,12 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 
 | Status | **Main Website - User Logged Out**
 |:-------:|:--------|
-| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Typing in an incorrect URL on the page loads the 404 error page
 | &check; | Pasting page that needs authentication loads a forbidden page
 | &check; | Clicking the nav logo loads the home page
 | &check; | Clicking the Home button on the nav bar loads the home page and lists all recipes
 | &check; | Clicking the Categories button on the nav bar lists all recipe categories
-| &check; | Clicking the Log In / Sign Up loads the sign up page
+| &check; | Clicking the Log In / Sign Up loads the login and sign up page
 | &check; | 6 recipes are rendered for the user on the pages before pagination kicks in
 | &check; | Clicking the View Recipe button on the a recipe card loads the recipe detail page
 | &check; | In the recipe detail view the user cannot create a comment, upvote or downvote
@@ -261,7 +272,7 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 
 | Status | **Main Website - User Logged In**
 |:-------:|:--------|
-| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Typing in an incorrect URL on the page loads the 404 error page
 | &check; | Pasting page that needs authentication loads a forbidden page
 | &check; | Clicking the nav logo loads the home page
 | &check; | Clicking the Home button on the nav bar loads the home page and lists all recipe
@@ -270,7 +281,7 @@ In addition to tests stated above I have performed a series of manual tests. Bel
 | &check; | Clicking the view recipe button on the recipe card loads the recipe detail page
 | &check; | In the comment view the logged in user can comment on a recipe
 | &check; | In the upvote and downvote views, a logged in user can upvote or downvote a recipe
-| &check; | In the detail view the logged in user can update/delete the comments written by themselves
+| &check; | In the recipe view the logged in user can update/delete the comments written by themselves
 | &check; | In the logged in user menu the Admin Area is not visible
 | &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
 | &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
@@ -292,13 +303,6 @@ Status | **Create A New User - User Logged Out**
 | &check; | Email field does not accept just spaces
 | &check; | Email field is optional
 | &check; | Password field does not accept empty field
-
-Status | **Create A Profile Page - User Logged In**
-|:-------:|:--------|
-| &check; | Username field is required
-| &check; | Password field does not accept empty field
-| &check; |Confirm Password field does not accept empty field
-
 
 
 ### Responsiveness Test
