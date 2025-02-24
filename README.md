@@ -110,22 +110,35 @@ Below the user stories for the project are listed to clarify why particular feat
 The TastyYum website follows a structured layout for easy navigation and user experience. Below is the breakdown of the site's structure:
 
 ### **Home page**
-Users can navigate through the page here
+- Landing page showcasing featured and latest recipes and Quick links to browse recipes by category.
 
 <details><summary><b>Home page</b></summary>
 
 ![Screenshot of home page](./readme/assets/images/home-page.png)
 </details><br>
 
+### **Categories**
+- Displays all available recipe categories
+
+<details><summary><b>Categories</b></b></summary>
+
+![Screenshot of categories](./readme/assets/images/categories-page.png)
+</details><br>
+
 ### **Views recipes and add comments**
- Users can view recipes but they cannot comment on recipes unless they are logged in.
+- Each recipe card includes an image, title, short description, and "View Recipe" button.
+- Users can add, edit, or delete their comments.
+- Users can view recipes but they cannot comment on recipes unless they are logged in.
+
 <details><summary><b>View recipe and add comment page</b></b></summary>
 
 ![Screenshot of home page](./readme/assets/images/view-recipe%20and%20add-comment.png)
 </details><br>
 
+## **Authentication**
+
 ### **Sign Up**
-New users can create an account from the Signup page.
+- New users can create an account from the Signup page using the sign up form.
 
 <details><summary><b>Sign Up</b></summary>
 
@@ -133,7 +146,8 @@ New users can create an account from the Signup page.
 </details><br/>
 
 ### **Log in**
-Users can login from the Login page.
+- User authentication form with "Forgot Password?" link.
+- Login with username/email and password.
 
 <details><summary><b>Log in</b></summary>
 
@@ -145,11 +159,14 @@ This page gives the administrator a view with information about i.e. total numbe
 
 <details><summary><b>Admin Area</b></summary>
 
-![Screenshot of admin page](/readme/assets/images/admin-nav.png)
+![Screenshot of admin page](./readme/assets/images/admin-nav.png)
 </details><br/>
 
 ### Features Left to Implement
-* Add functionalities to llow users to view and edit their profiles, including changing their passwords and updating personal information.
+* Add functionalities to allow users to view and edit their profiles, including changing their passwords and updating personal information.
+* Add a "Save Recipe" button so users can bookmark their favorite recipes.
+* Add filters for sorting by category, difficulty, cooking time, or rating.
+* Allow users to create their own recipes.
 * Allow users to edit their submitted recipes.
 * Implement functionality for users to delete their recipes.
 * Enable users to reply to other users’ comments, creating a threaded discussion.
@@ -158,6 +175,33 @@ This page gives the administrator a view with information about i.e. total numbe
 [Back to top](<#table-of-content>)
 
 # Testing
+
+## Testing User Stories
+* As a Site User | I want to be able to browse recipes and read instructions without needing to log in, so that I can get a feel for the site before registering.
+  * The site has been structured in a way that even without creating accout the user can browse through the recipes but they won't be able to comment, upvote or downvote any recipe.
+* As a Site User | I want to create an account, so that I can save my favorite recipes and interact with the community 
+  * In the navigation bar the user can click on sign up to create a new account.
+* As a Site User | I want to log in securely, so that I can comment, edit or delete my comment, upvote or downvote
+  * In the navigation bar the user can click the Login to log into their account. When this is done the user can leave comments, edit or delete comments on recipes, upvote and downvote.
+* As a Site User | I want to log out, so that my account stays secure.
+  * When the user is logged in it is possible to choose the 'Log Out'-option in the navigation menu.
+* As a Site User | I want to see the full details of a recipe, so that I can follow the instructions to cook it.
+  * On the home link, the user can click on the view recipe button to view the full details of the recipe.
+* As a Site User | I want to filter recipes by category, so that I can easily find recipes that interest me.
+  * On the navigation bar, the user can click on the categories link to view filter through the recipes by different categories.
+* As a Site User | I want to browse recipes comfortably, so that I can use the website on my phone
+  * The site has been created to be responsive on all devices irrespective of their size.
+* As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information
+   * When the admin is logged in it is possible to choose the 'Log Out'-option in the navigation menu.
+| As a Site Admin | I want to enforce secure login methods, so that user data remains protected
+* As a Site Admin | I want to view a list of all registered users, so that I can manage the community and remove unwanted users if necessary 
+  * When the admin is logged in, the admin can view the list of all registered users, the admin can add and delete users.
+* As a Site Admin | I want to delete offensive or spam comments, so that the site remains a positive and respectful space 
+   * When the user is logged in as an administrator / superuser a new item show up in the navigation menu called 'Admin Area'. In this area the user can read, update and delete comments. Creation of reviews can be made the same way as any logged in user. 
+* As a Site Admin | I want to create and organize recipe categories, so that users can easily find relevant recipes.
+  * When the Admin is logged in, there is a category area, where admin can create and organize recipes.
+
+[Back to top](<#table-of-content>)
 
 ## Code Validation
 The code on the 'TastyYum' site has been tested through W3C Markup Validation Service, W3C CSS Validation Service and JSHint. Errors were at first found on the site in the W3C Markup Validation Service but could quite easily be fixed (see bugs section). One error appeared as well in the W3C CSS Validation but that was connected to Font Awesome and not to the site code itself (see bugs section).
@@ -182,6 +226,104 @@ When validating my own code the W3C CSS Validator reports no errors.
 </details><br/>
 
 [Back to top](<#table-of-content>)
+
+### PEP Validation
+PEP8 was used to validate the python codes.
+
+* admin.py - No errors or warnings reported
+* forms.py - No errors or warnings reported
+* models.py - No errors or warnings reported
+* apps.py - No errors or warnings reported
+* urls.py - No errors or warnings reported
+* views.py - No errors or warnings reported
+
+## Additional Testing
+
+### Manual Testing
+
+In addition to tests stated above I have performed a series of manual tests. Below the list of tests that has been conducted can be found.
+
+| Status | **Main Website - User Logged Out**
+|:-------:|:--------|
+| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Pasting page that needs authentication loads a forbidden page
+| &check; | Clicking the nav logo loads the home page
+| &check; | Clicking the Home button on the nav bar loads the home page and lists all recipes
+| &check; | Clicking the Categories button on the nav bar lists all recipe categories
+| &check; | Clicking the Log In / Sign Up loads the sign up page
+| &check; | 6 recipes are rendered for the user on the pages before pagination kicks in
+| &check; | Clicking the View Recipe button on the a recipe card loads the recipe detail page
+| &check; | In the recipe detail view the user cannot create a comment, upvote or downvote
+| &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Clicking the Youtube link in the footer area opens Youtube in a new window
+
+| Status | **Main Website - User Logged In**
+|:-------:|:--------|
+| &check; | Typing in a incorrect URL on the page loads the 404 error page
+| &check; | Pasting page that needs authentication loads a forbidden page
+| &check; | Clicking the nav logo loads the home page
+| &check; | Clicking the Home button on the nav bar loads the home page and lists all recipe
+| &check; | Clicking the Categories button on the nav bar lists all the recipe categories 
+| &check; | 6 recipes are rendered for the user on all pages before pagination kicks in
+| &check; | Clicking the view recipe button on the recipe card loads the recipe detail page
+| &check; | In the comment view the logged in user can comment on a recipe
+| &check; | In the upvote and downvote views, a logged in user can upvote or downvote a recipe
+| &check; | In the detail view the logged in user can update/delete the comments written by themselves
+| &check; | In the logged in user menu the Admin Area is not visible
+| &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Clicking the Youtube link in the footer area opens Youtube in a new window
+
+| Status | **Main Website - Admin Logged In**
+|:-------:|:--------|
+| &check; | Clicking the Admin Area button in the logged in user menu loads the Admin Area Page
+| &check; | The view button is only visible if a recipe is published
+| &cross; | When clicking delete / add recipe the appropiate page loads and shows success page after submit
+| &check; | Total Users shows correct number of total users
+| &check; | Total Comments shows the correct number of total comments
+
+Status | **Create A New User - User Logged Out**
+|:-------:|:--------|
+| &check; | Username field is required
+| &check; | Username field does not accept empty field
+| &check; | Email field does not accept just spaces
+| &check; | Email field is optional
+| &check; | Password field does not accept empty field
+
+Status | **Create A Profile Page - User Logged In**
+|:-------:|:--------|
+| &check; | Username field is required
+| &check; | Password field does not accept empty field
+| &check; |Confirm Password field does not accept empty field
+
+
+
+### Responsiveness Test
+The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+
+| Desktop    | Display <1280px       | Display >1280px    |
+|------------|-----------------------|--------------------|
+| Render     | pass                  | pass               |
+| Images     | pass                  | pass               |
+| Links      | pass                  | pass               |
+
+| Tablet     | Samsung Galaxy Tab 10 | Amazon Kindle Fire | iPad Mini | iPad Pro |
+|------------|-----------------------|--------------------|-----------|----------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+
+| Phone      | Galaxy S5/S6/S7       | iPhone 6/7/8       | iPhone 12pro         |
+|------------|-----------------------|--------------------|----------------------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+
+[Back to top](<#table-of-content>)
+
 
 ### Browser Compatibility
 * Google Chrome Version (106.0.5249.119)
