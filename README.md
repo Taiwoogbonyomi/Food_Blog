@@ -367,21 +367,20 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 ### Lighthouse
 Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *home page* and *category page*. The testing showed the following:
 
-* Home Page - Performance: 92, Accessibility: 93, Best Practises: 61, SEO: 100
+* Home Page - Performance: 89, Accessibility: 93, Best Practises: 79, SEO: 100
 * Categories Page - Performance: 99, Accessibility: 92, Best Practises: 100, SEO: 100
 
 In general this is OK results. The lower result on best practices on the Home page is as a result of third party cookies which I think was caused by the cloudinary res. I wasn't able to resolve this due to time constraint.
 
 <details><summary><b>Lighthouse Home Result</b></summary>
 
-![Lighthouse Home Result](./readme/assets/images/lighthouse_homepage.png)
+![Lighthouse Home Result](./readme/assets/images/lighthouse_home.png)
 </details><br/>
 
 <details><summary><b>Lighthouse Categories Result</b></summary>
 
 ![Lighthouse Categories Result](./readme/assets/images/lighthouse_categories.png)
 </details><br/>
-<details><summary><b>Lighthouse Result</b></summary>
 
 [Back to top](<#table-of-content>)
 
@@ -419,16 +418,16 @@ In general this is OK results. The lower result on best practices on the Home pa
 * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
 * [Responsive Design Checker](https://ui.dev/amiresponsive) - Used for responsiveness check.
 * [Favicon](https://favicon.io/) - Used to create the favicon.
-* [Gitpod](https://gitpod.io/)- Used to create and edit this website.
 * [Cloudinary](https://cloudinary.com/) - A service that hosts all static files in the project.
-* [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
-* [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
-* [PEP8 Validation](http://pep8online.com/) - 
-* [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
+* [HTML Validation](https://validator.w3.org/) - Used to validate HTML code.
+* [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code.
+* [PEP8 Validation](http://pep8online.com/) - used to validate the code layout for best practices.
+* [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code.
 * [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness.
 
 [Back to top](<#table-of-content>)
 
+# Deployment
 
 #### 📦 Local Deployment  
 1. Clone the repository from GitHub by clicking the "Code" button and copying the URL.
@@ -471,16 +470,14 @@ In general this is OK results. The lower result on best practices on the Home pa
   
 <br>
 <br>
-<br>
 
 ---
+## Credits
 
-# 👋 Credits
+* [Favicon.io](https://favicon.io/) - used to create favicon.
+* [pixabay.com](https://www.pixabay.com/)- used to generate all the images
 
-<details>
-[Favicon.io](https://favicon.io/) - used to create favicon.
-[pixabay.com](https://www.pixabay.com/)- used to generate all the images
-
-</details>
+# Acknowledgements
+This fictional site was created for Portfolio Project #4 (Full-Stack Tolkin) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 
 [Back to top](<#table-of-content>)
