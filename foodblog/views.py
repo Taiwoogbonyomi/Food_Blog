@@ -9,7 +9,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Recipe, Comment, Category
 from .forms import CommentForm
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django import forms
 
 
@@ -70,7 +70,7 @@ class CommentCreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('recipe_detail', kwargs={'pk': self.kwargs['pk']})
+        return reverse_lazy('recipe_detail', kwargs={'pk': self.kwargs['pk']})
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -20,6 +20,7 @@ TastyYum is a web application designed for food enthusiasts to explore, share, a
 
 * [**Existing Features**](<#existing-features>)
     * [Home page](<#home-page>)
+    * [Categories page](<#categories-page>)
     * [Sign Up](<#sign-up>)
     * [log In](<#sign-in>)
     * [log Out](<#sign-out>)
@@ -70,6 +71,8 @@ The wireframes for the site were created in the software [Balsamiq](https://bals
 ![Wireframes](readme/assets/images/mobile-wireframe.png)
 </details><br/>
 
+[Back to top](<#table-of-content>)
+
 ## 👤 User Stories
 Below the user stories for the project are listed to clarify why particular feature matters.
 
@@ -88,6 +91,7 @@ Below the user stories for the project are listed to clarify why particular feat
 | As a Site User | I want to browse recipes comfortably, so that I can use the website on my phone | &check; |
 | As a Site User | I want the interface to be fully responsive, so that I can comfortably browse and read recipes on a smaller screen | &check; |
 
+[Back to top](<#table-of-content>)
 
 ### Site Admin
 
@@ -135,6 +139,8 @@ The TastyYum website follows a structured layout for easy navigation and user ex
 ![Screenshot of home page](./readme/assets/images/view-recipe%20and%20add-comment.png)
 </details><br>
 
+[Back to top](<#table-of-content>)
+
 ## **Authentication**
 
 ### **Sign Up**
@@ -162,6 +168,8 @@ This page gives the administrator a view with information about i.e. total numbe
 ![Screenshot of admin page](./readme/assets/images/admin-nav.png)
 </details><br/>
 
+[Back to top](<#table-of-content>)
+
 ### Features Left to Implement
 * Add functionalities to allow users to view and edit their profiles, including changing their passwords and updating personal information.
 * Add a "Save Recipe" button so users can bookmark their favorite recipes.
@@ -171,6 +179,23 @@ This page gives the administrator a view with information about i.e. total numbe
 * Implement functionality for users to delete their recipes.
 * Enable users to reply to other users’ comments, creating a threaded discussion.
 * Add funtion to allow user search for recipes
+
+[Back to top](<#table-of-content>)
+
+## Design Choices
+
+* ### Color Scheme
+
+The color scheme chosen for the 'TastyYum' site combines strong contrast for readability with soft neutral tones for background elements, ensuring an appealing visual experience.I used the online service [Coolors](https://coolors.co/) to choose the color scheme.
+
+![Color Palette image](./readme/assets/images/coolors_palette.png)
+
+[Back to top](<#table-of-content>)
+
+* ### Typography
+The typography follows a clean, modern aesthetic with a focus on readability and simplicity. The fonts used for the site are 'Roboto' and its fallback font is sans-serif.
+
+* 'Roboto' is used for the entire body text and headings. It is a highly legible, sans-serif typeface commonly used in modern web design.
 
 [Back to top](<#table-of-content>)
 
@@ -340,15 +365,42 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 
 
 ### Lighthouse
-Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *index page*, *review details page*, *the admin area* and *the about page*. The testing showed the following:
+Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *home page* and *category page*. The testing showed the following:
 
-* Index Page - Performance: 75, Accessibility: 100, Best Practises: 100, SEO: 92
+* Home Page - Performance: 92, Accessibility: 93, Best Practises: 61, SEO: 100
+* Categories Page - Performance: 99, Accessibility: 92, Best Practises: 100, SEO: 100
 
+In general this is OK results. The lower result on best practices on the Home page is as a result of third party cookies which I think was caused by the cloudinary res. I wasn't able to resolve this due to time constraint.
 
+<details><summary><b>Lighthouse Home Result</b></summary>
+
+![Lighthouse Home Result](./readme/assets/images/lighthouse_homepage.png)
+</details><br/>
+
+<details><summary><b>Lighthouse Categories Result</b></summary>
+
+![Lighthouse Categories Result](./readme/assets/images/lighthouse_categories.png)
+</details><br/>
 <details><summary><b>Lighthouse Result</b></summary>
 
-![Lighthouse Index Result](readme/assets/images/lighthouse-check.png)
-</details><br/>
+[Back to top](<#table-of-content>)
+
+
+### Fixed Bugs
+* Bug: images not rendering on the home page, this was fixed by adding cloudinary settings in settings.py.
+
+* Bug: Mixed cross site https causing the performance of the website to be very low, this was fixed by setting the cloudinary config secure to True
+
+* Bug: When the Markup Validation was done there was initially quite a lot of errors. The debugging process was very straight forward and the errors could easily be fixed.
+
+
+### Unfixed Bugs
+* * Bug: Third party cookies issues which is caused by cloudinary was reported in the Google Chrome DevTools console . I have done some digging and it seems that these issues have been reported within different forums on the web. I have checked other browsers (i.e. Firefox, Min and Edge) and the issue does not show up there.
+
+
+# Technologies Used
+
+## Languages
 
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the site.
 * [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
@@ -362,6 +414,7 @@ Google Lighthouse in Chrome Developer Tools was used to test the application wit
 * [Microsoft Excel](https://www.microsoft.com/sv-se/microsoft-365/excel) - Used to create testing scenarios.
 * [Github](https://github.com/) - Used to host and edit the website.
 * [GitBash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Terminal in [Gitpod](https://www.gitpod.io) used to push changes to the GitHub repository.
+* [VSCode](https://code.visualstudio.com/) - Used to create and edit the site.
 * [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to.
 * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
 * [Responsive Design Checker](https://ui.dev/amiresponsive) - Used for responsiveness check.
@@ -385,7 +438,7 @@ Google Lighthouse in Chrome Developer Tools was used to test the application wit
 5. Note: The project is setup to use environment variables. You will need to set these up in your local environment. See [Environment Variables](#environment-variables) for more information.
 6. Connect your database of choice and run the migrations by typing `python manage.py migrate` in the terminal.
 7. Create a superuser by typing `python manage.py createsuperuser` in the terminal and following the prompts.
-8. Optional: Fixtures for Flight, Airport and Aircraft models are included in the project in the `fixtures` directory. To add pre-populated data to the database, run `python manage.py loaddata fixtures/[fixture_name].json`.
+8. Optional: Fixtures for Recipes and Categories models are included in the project in the `fixtures` directory. To add pre-populated data to the database, run `python manage.py loaddata fixtures/[fixture_name].json`.
 9. Run the app by typing `python manage.py runserver` in the terminal and opening the URL in your browser.
 
 #### 💜 Heroku Deployment
@@ -426,7 +479,7 @@ Google Lighthouse in Chrome Developer Tools was used to test the application wit
 
 <details>
 [Favicon.io](https://favicon.io/) - used to create favicon.
-[pexels.com](https://www.pexels.com/)- used to generate all the images
+[pixabay.com](https://www.pixabay.com/)- used to generate all the images
 
 </details>
 

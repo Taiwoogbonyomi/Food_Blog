@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import cloudinary
 if os.path.isfile("env.py"):
     import env  # noqa
 
@@ -33,6 +34,11 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     ".herokuapp.com"
 ]
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
 
 # Application definition
 
@@ -100,12 +106,9 @@ DATABASES = {
    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-
 # Cloudinary settings
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
-CLOUDINARY_STORAGE = {
-    "SECURE": True
-}
+cloudinary.config(secure=True,)
 
 CSRF_TRUSTED_ORIGINS = [
     "https://localhost",
